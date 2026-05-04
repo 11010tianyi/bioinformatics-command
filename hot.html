@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="description" content="命令列表:中英双语生物信息命令速查，覆盖 FASTQ、BAM、VCF、BED、RNA-seq、ChIP-seq 和工作流工具。 - 中英双语生物信息命令速查。">
+    <meta name="keywords" content="Bioinformatics,生物信息,生信,Command,命令大全,FASTQ,BAM,VCF,BED,RNA-seq,ChIP-seq,命令列表,中英双语生物信息命令速查，覆盖 FASTQ、BAM、VCF、BED、RNA-seq、ChIP-seq 和工作流工具。">
+    <title>命令列表 - 生信命令大全 | Bioinformatics Commands</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/index.css?v=1777881180688">
+    <script src="js/dark-mode.min.js"></script>
+    <script type="module" src="js/github-corners.js"></script>
+</head>
+<body>
+<dark-mode permanent dark="Dark" light="Light" style="position: fixed;left: 10px;top: 8px; z-index: 999;"></dark-mode>
+
+<github-corners target="__blank" z-index="999" position="fixed" href="https://github.com/11010tianyi/bioinformatics-command"></github-corners>
+<div class="header header_list">
+  <div class="header_inner">
+      <div class="logo">
+          <a href="index.html" title="Bioinformatics Commands">
+            <span class="brand-main">Bio Commands</span>
+            <span class="brand-sub">生信命令大全</span>
+          </a>
+      </div>
+      <div class="search">
+          <ul class="search-list" id="result"></ul>
+          <input type="text" class="query" id="query" autocomplete="off" autofocus="autofocus" placeholder="samtools / VCF / RNA-seq / 比对"/>
+          <div class="enter-input">
+              <input type="hidden" id="current_path" value="/hot.html">
+              <button id="search_btn">Search</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="hotlist">
+  <ul>
+  
+    <li><a href="c/bowtie2.html"><strong>Bowtie2</strong> <span class="result-chip">Alignment</span> - 快速短读长比对工具，常用于 ChIP-seq、ATAC-seq、宏基因组和小基因组比对。 / Fast short-read aligner often used for ChIP-seq, ATAC-seq, metagenomics, and small genomes.</a></li>
+  
+    <li><a href="c/bwa.html"><strong>BWA</strong> <span class="result-chip">Alignment</span> - 面向 DNA 短读长的经典参考基因组比对工具，WGS/WES 流程中常用 BWA-MEM。 / Classic DNA read aligner; BWA-MEM is widely used in WGS/WES pipelines.</a></li>
+  
+    <li><a href="c/minimap2.html"><strong>minimap2</strong> <span class="result-chip">Alignment</span> - 长读长、组装序列和 spliced RNA/cDNA 比对的高性能工具。 / High-performance aligner for long reads, assemblies, and spliced RNA/cDNA alignments.</a></li>
+  
+    <li><a href="c/samtools.html"><strong>samtools</strong> <span class="result-chip">Alignment</span> - 处理 SAM/BAM/CRAM 比对文件的核心工具箱。 / Core toolkit for manipulating SAM/BAM/CRAM alignment files.</a></li>
+  
+    <li><a href="c/macs3.html"><strong>MACS3</strong> <span class="result-chip">ChIP-seq/ATAC-seq</span> - ChIP-seq/ATAC-seq 常用 peak calling 工具，MACS2 的后续版本。 / Peak caller for ChIP-seq and ATAC-seq; successor of MACS2.</a></li>
+  
+    <li><a href="c/cutadapt.html"><strong>Cutadapt</strong> <span class="result-chip">FASTQ preprocessing</span> - 从 FASTQ reads 中去除接头、引物和低质量片段。 / Removes adapters, primers, and low-quality sequence from FASTQ reads.</a></li>
+  
+    <li><a href="c/fastp.html"><strong>fastp</strong> <span class="result-chip">FASTQ preprocessing</span> - 一体化 FASTQ 质控、过滤、接头剪切和 HTML/JSON 报告工具。 / All-in-one FASTQ quality control, filtering, adapter trimming, and reporting tool.</a></li>
+  
+    <li><a href="c/fastqc.html"><strong>FastQC</strong> <span class="result-chip">FASTQ QC</span> - 生成 FASTQ 测序质量报告，常用于原始数据和清洗后数据检查。 / Generates FASTQ sequencing quality reports for raw and cleaned reads.</a></li>
+  
+    <li><a href="c/bedtools.html"><strong>bedtools</strong> <span class="result-chip">Genomic intervals</span> - 对 BED/GFF/GTF/VCF/BAM 等基因组区间做交集、覆盖度、最近邻和格式转换。 / Genome arithmetic toolkit for intersections, coverage, closest features, and format conversion.</a></li>
+  
+    <li><a href="c/multiqc.html"><strong>MultiQC</strong> <span class="result-chip">QC summary</span> - 汇总 FastQC、fastp、STAR、samtools 等工具报告，生成统一 QC 报告。 / Aggregates reports from tools such as FastQC, fastp, STAR, and samtools into one QC report.</a></li>
+  
+    <li><a href="c/featurecounts.html"><strong>featureCounts</strong> <span class="result-chip">RNA-seq</span> - 基于注释文件把 RNA-seq 比对 reads 计数到 gene/exon/feature。 / Assigns aligned RNA-seq reads to genes, exons, or other genomic features.</a></li>
+  
+    <li><a href="c/salmon.html"><strong>Salmon</strong> <span class="result-chip">RNA-seq</span> - 快速 RNA-seq transcript-level 定量工具，常用于无比对或准比对定量流程。 / Fast transcript-level RNA-seq quantification tool using lightweight mapping methods.</a></li>
+  
+    <li><a href="c/star.html"><strong>STAR</strong> <span class="result-chip">RNA-seq alignment</span> - 高性能 RNA-seq spliced aligner，常用于 bulk RNA-seq reads 到基因组比对。 / High-performance RNA-seq spliced aligner widely used for mapping reads to a genome.</a></li>
+  
+    <li><a href="c/seqkit.html"><strong>SeqKit</strong> <span class="result-chip">Sequence toolkit</span> - 高性能 FASTA/FASTQ 命令行工具箱，适合统计、筛选、抽样、格式转换和序列操作。 / Fast FASTA/FASTQ toolkit for statistics, filtering, sampling, conversion, and sequence operations.</a></li>
+  
+    <li><a href="c/bcftools.html"><strong>bcftools</strong> <span class="result-chip">VCF/BCF</span> - 读取、过滤、规范化、合并、查询和注释 VCF/BCF 变异文件。 / Toolkit for viewing, filtering, normalizing, merging, querying, and annotating VCF/BCF variant files.</a></li>
+  
+    <li><a href="c/nextflow.html"><strong>Nextflow</strong> <span class="result-chip">Workflow</span> - 面向可复现生信流程的工作流引擎，常与 nf-core、Conda、Docker/Singularity 配合使用。 / Workflow engine for reproducible bioinformatics pipelines, commonly used with nf-core, Conda, Docker, and Singularity.</a></li>
+  
+  </ul>
+</div>
+<div class="footer ">
+  <a target="_blank" href="https://github.com/11010tianyi/bioinformatics-command/new/master/bio-command">添加命令 / Add command</a> |
+  <a href="hot.html">命令列表 / Command list</a> |
+  <a href="contributors.html">资料来源 / Sources</a> |
+  <a target="_blank" href="https://github.com/JoshuaChou2018/AutoBA">AutoBA</a> |
+  <a target="_blank" href="https://github.com/tldr-pages/tldr">tldr-pages</a> |
+  <a target="_blank" href="https://github.com/danielecook/Awesome-Bioinformatics">Awesome Bioinformatics</a>
+  <br />
+  <a href="https://github.com/11010tianyi/bioinformatics-command" target="_blank">GitHub</a> |
+  <a href="https://bioconda.github.io/" target="_blank">Bioconda</a> |
+  <a href="https://nf-co.re/" target="_blank">nf-core</a>
+  <div>
+    共收录
+    <span id="commands_info">
+      16
+    </span>
+    个生信高频命令 / curated bioinformatics commands.
+  </div>
+</div>
+
+<script type="text/javascript" src="js/dt.js?v=1777881180689"></script>
+<script type="text/javascript" src="js/index.js?v=1777881180689"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="description" content="贡献者:中英双语生物信息命令速查，覆盖 FASTQ、BAM、VCF、BED、RNA-seq、ChIP-seq 和工作流工具。 - 中英双语生物信息命令速查。">
+    <meta name="keywords" content="Bioinformatics,生物信息,生信,Command,命令大全,FASTQ,BAM,VCF,BED,RNA-seq,ChIP-seq,贡献者,中英双语生物信息命令速查，覆盖 FASTQ、BAM、VCF、BED、RNA-seq、ChIP-seq 和工作流工具。">
+    <title>贡献者 - 生信命令大全 | Bioinformatics Commands</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/index.css?v=1777881180690">
+    <script src="js/dark-mode.min.js"></script>
+    <script type="module" src="js/github-corners.js"></script>
+</head>
+<body>
+<dark-mode permanent dark="Dark" light="Light" style="position: fixed;left: 10px;top: 8px; z-index: 999;"></dark-mode>
+
+<github-corners target="__blank" z-index="999" position="fixed" href="https://github.com/11010tianyi/bioinformatics-command"></github-corners>
+<div class="header header_list">
+  <div class="header_inner">
+      <div class="logo">
+          <a href="index.html" title="Bioinformatics Commands">
+            <span class="brand-main">Bio Commands</span>
+            <span class="brand-sub">生信命令大全</span>
+          </a>
+      </div>
+      <div class="search">
+          <ul class="search-list" id="result"></ul>
+          <input type="text" class="query" id="query" autocomplete="off" autofocus="autofocus" placeholder="samtools / VCF / RNA-seq / 比对"/>
+          <div class="enter-input">
+              <input type="hidden" id="current_path" value="/contributors.html">
+              <button id="search_btn">Search</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="contributors">
+  <h1>资料来源 / Sources</h1>
+  <p>本站内容优先使用原创整理，并在每个命令条目中保留官方文档或可复用资料链接。</p>
+  <p>The command pages are curated with original wording and link back to official or reusable references.</p>
+
+  <h2>参考项目 / Reference Projects</h2>
+  <ul>
+    <li><a href="https://github.com/JoshuaChou2018/AutoBA/tree/main/softwares_config">AutoBA softwares_config</a></li>
+    <li><a href="https://github.com/JoshuaChou2018/AutoBA/tree/main/softwares_database">AutoBA softwares_database</a></li>
+    <li><a href="https://github.com/tldr-pages/tldr">tldr-pages</a></li>
+    <li><a href="https://github.com/danielecook/Awesome-Bioinformatics">Awesome Bioinformatics</a></li>
+  </ul>
+
+  <h2>官方生态 / Official Ecosystem</h2>
+  <ul>
+    <li><a href="https://bioconda.github.io/">Bioconda</a></li>
+    <li><a href="https://nf-co.re/">nf-core</a></li>
+    <li><a href="https://www.htslib.org/doc/">HTSlib / samtools manuals</a></li>
+    <li><a href="https://bedtools.readthedocs.io/en/latest/">bedtools documentation</a></li>
+  </ul>
+</div>
+<div class="footer ">
+  <a target="_blank" href="https://github.com/11010tianyi/bioinformatics-command/new/master/bio-command">添加命令 / Add command</a> |
+  <a href="hot.html">命令列表 / Command list</a> |
+  <a href="contributors.html">资料来源 / Sources</a> |
+  <a target="_blank" href="https://github.com/JoshuaChou2018/AutoBA">AutoBA</a> |
+  <a target="_blank" href="https://github.com/tldr-pages/tldr">tldr-pages</a> |
+  <a target="_blank" href="https://github.com/danielecook/Awesome-Bioinformatics">Awesome Bioinformatics</a>
+  <br />
+  <a href="https://github.com/11010tianyi/bioinformatics-command" target="_blank">GitHub</a> |
+  <a href="https://bioconda.github.io/" target="_blank">Bioconda</a> |
+  <a href="https://nf-co.re/" target="_blank">nf-core</a>
+  <div>
+    共收录
+    <span id="commands_info">
+      16
+    </span>
+    个生信高频命令 / curated bioinformatics commands.
+  </div>
+</div>
+
+<script type="text/javascript" src="js/dt.js?v=1777881180690"></script>
+<script type="text/javascript" src="js/index.js?v=1777881180690"></script>
+</body>
+</html>
