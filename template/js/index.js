@@ -2,7 +2,7 @@
 * 对数组进行排序，作为 Array.sort() 回调函数使用
 */
 const sortArray = function (a, b) {
-  return a.nIdx - b.nIdx;
+  return (a.nIdx ?? a.dIdx ?? 9999) - (b.nIdx ?? b.dIdx ?? 9999);
 }
 /**
  * 判断 indexOf() 是否捕获到了搜索词
@@ -23,7 +23,7 @@ function indexOfCatch(a) {
       function $$(id) {
         return document.getElementById(id)
       }
-      this.commands = linux_commands || [];
+      this.commands = window.bio_commands || window.linux_commands || [];
       this.elm_query = $$('query');
       this.elm_btn = $$('search_btn');
       this.elm_result = $$('result');
@@ -83,9 +83,9 @@ function indexOfCatch(a) {
     pushState() {
       if (window.history && window.history.pushState)
         if (this.query) {
-          history.pushState({}, "linux_commands", `#!kw=${this.query}`)
+          history.pushState({}, "bio_commands", `#!kw=${this.query}`)
         } else {
-          history.pushState({}, "linux_commands", window.location.pathname);
+          history.pushState({}, "bio_commands", window.location.pathname);
         }
     }
     /**
@@ -113,13 +113,14 @@ function indexOfCatch(a) {
       const replaceHTML = `<i class="kw">$1</i>`
       let name = json.n
       let des = json.d
-      let reg = new RegExp(`(${keywolds})`, "ig")
+      let category = json.category ? `<span class="result-chip">${json.category}</span>` : ''
+      let reg = new RegExp(`(${escapeRegExp(keywolds)})`, "ig")
       if (keywolds) {
         name = json.n.replace(reg, replaceHTML);
         des = json.d.replace(reg, replaceHTML) || '';
       }
       let rootp = this.root_path.replace(/\/$/, '');
-      const str = `<a href="${rootp}/c$url$.html"><strong>$name$</strong> - $des$</a>${islist ? listHTML : ''}`
+      const str = `<a href="${rootp}/c$url$.html"><strong>$name$</strong> ${category} - $des$</a>${islist ? listHTML : ''}`
       return this.simple(str, {
         name,
         url: json.p,
@@ -139,7 +140,15 @@ function indexOfCatch(a) {
         for (let i = 0; i < page_size; i++) {
           if (!arr[i]) break;
           const nIdx = self.isSreachIndexOF(arr[i].n, self.query);
-          const dIdx = self.isSreachIndexOF(arr[i].d, self.query);
+          const searchable = [
+            arr[i].d,
+            arr[i].category,
+            arr[i].k,
+            ...(arr[i].aliases || []),
+            ...(arr[i].formats || []),
+            ...(arr[i].tags || []),
+          ].join(' ');
+          const dIdx = self.isSreachIndexOF(searchable, self.query);
           let json = arr[i];
           if (indexOfCatch(nIdx)) {
             json.nIdx = nIdx;
@@ -170,8 +179,8 @@ function indexOfCatch(a) {
       if (!arrResultHTML.length) {
         const noResultTipHTML = document.createElement("LI");
         const tipSpan = document.createElement("span")
-        const nullQueryStringTips = `请尝试输入一些字符，进行搜索！`
-        const undefinedQueryTips = `没有搜索到任何内容，请尝试输入其它字符！`
+        const nullQueryStringTips = `输入命令、格式或流程关键词 / Type a command, format, or workflow keyword.`
+        const undefinedQueryTips = `没有搜索到内容 / No result. Try another keyword.`
         tipSpan.innerText = this.query ? undefinedQueryTips : nullQueryStringTips
         noResultTipHTML.appendChild(tipSpan);
         elm.appendChild(noResultTipHTML);
@@ -265,3 +274,7 @@ function indexOfCatch(a) {
   }
   new Commands()
 })()
+
+function escapeRegExp(str) {
+  return String(str || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}

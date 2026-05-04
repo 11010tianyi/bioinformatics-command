@@ -32,7 +32,20 @@ mq-mobile = "screen and (max-width: 479px)"
   padding 0 10px
   .logo a {
     display flex
+    flex-direction column
     color: currentColor;
+    text-decoration none
+  }
+  .brand-main {
+    font-size 26px
+    line-height 1.05
+    font-weight 800
+  }
+  .brand-sub {
+    font-size 13px
+    line-height 1.2
+    color #637381
+    font-weight 600
   }
   .box {
     position relative
@@ -192,7 +205,7 @@ mq-mobile = "screen and (max-width: 479px)"
     align-items center
   }
   .logo {
-    min-height 140px
+    min-height 118px
     display flex
     align-items center
   }
@@ -218,9 +231,11 @@ mq-mobile = "screen and (max-width: 479px)"
   .logo {
     padding-right 24px
     text-align left
-    svg {
-      height 37px
-      width 136px
+    .brand-main {
+      font-size 22px
+    }
+    .brand-sub {
+      font-size 12px
     }
   }
 }
@@ -251,6 +266,18 @@ mq-mobile = "screen and (max-width: 479px)"
       color #4F4F4F
     }
   }
+}
+
+.result-chip {
+  display inline-block
+  margin 0 4px
+  padding 1px 6px
+  border 1px solid var(--color-header-border)
+  border-radius 999px
+  color #4a6378
+  font-size 12px
+  line-height 1.4
+  vertical-align 1px
 }
 
 .hotlist {
@@ -324,8 +351,11 @@ mq-mobile = "screen and (max-width: 479px)"
       padding-right 10px
       text-align center
     }
-    .logo svg {
-      width 96px
+    .logo .brand-main {
+      font-size 18px
+    }
+    .logo .brand-sub {
+      display none
     }
     .search {
       .query {

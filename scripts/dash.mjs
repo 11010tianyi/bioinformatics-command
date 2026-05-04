@@ -121,7 +121,7 @@ async function build() {
   // 确保所有操作完成后再压缩
   await new Promise(resolve => setTimeout(resolve, 30000)); // 增加到 30 秒
 
-  const outputPath = pathJoin(process.cwd(), '.deploy', 'linux-command.docset.tgz');
+  const outputPath = pathJoin(process.cwd(), '.deploy', `${DOC_NAME}.docset.tgz`);
   await tgz.compressDir(DOCSET_DIR, outputPath);
 }
 

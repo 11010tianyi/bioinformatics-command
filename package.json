@@ -1,8 +1,8 @@
 {
-  "name": "linux-command",
-  "version": "1.22.0",
-  "description": "Linux Command",
-  "homepage": "https://jaywcjlove.github.io/linux-command/",
+  "name": "bioinformatics-command",
+  "version": "0.1.0",
+  "description": "Bilingual bioinformatics command reference",
+  "homepage": "https://11010tianyi.github.io/bioinformatics-command/",
   "main": "dist/data.json",
   "scripts": {
     "start": "npm run build",
@@ -10,19 +10,20 @@
     "dash": "npm run build && node scripts/dash.mjs"
   },
   "files": [
-    "command",
+    "bio-command",
     "dist"
   ],
   "keywords": [
     "cli",
-    "Linux",
-    "Command"
+    "bioinformatics",
+    "genomics",
+    "command"
   ],
-  "author": "kenny wang <wowohoo@qq.com>",
+  "author": "11010tianyi",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jaywcjlove/linux-command.git"
+    "url": "git+https://github.com/11010tianyi/bioinformatics-command.git"
   },
   "devDependencies": {
     "@uiw/github-corners": "~1.5.11",

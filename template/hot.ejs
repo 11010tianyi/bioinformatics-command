@@ -3,7 +3,7 @@
 <div class="hotlist">
   <ul>
   <%describe.arr.forEach(function(page,item){%>
-    <li><a href="c<%=page.p%>.html"><%=page.n%> - <%=page.d%></a></li>
+    <li><a href="c<%=page.p%>.html"><strong><%=page.n%></strong><% if(page.category){ %> <span class="result-chip"><%=page.category%></span><% } %> - <%=page.d%></a></li>
   <%});%>
   </ul>
 </div>
