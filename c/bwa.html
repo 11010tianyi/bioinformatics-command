@@ -9,7 +9,7 @@
     <meta name="keywords" content="Bioinformatics,生物信息,生信,Command,命令大全,FASTQ,BAM,VCF,BED,RNA-seq,ChIP-seq,BWA,面向 DNA 短读长的经典参考基因组比对工具，WGS/WES 流程中常用 BWA-MEM。 / Classic DNA read aligner; BWA-MEM is widely used in WGS/WES pipelines.">
     <title>BWA - 生信命令大全 | Bioinformatics Commands</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1777881180799">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1778855445143">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -45,6 +45,23 @@
 <span class="split"></span>
 <a target="_blank" href="https://github.com/11010tianyi/bioinformatics-command/edit/master/bio-command/bwa.md">添加实例 / Add example</a>
 </span>
+
+
+
+<div class="format-usedby">
+  <strong>文件格式 / Formats</strong>
+  <div class="format-chip-list">
+    
+      <a class="format-chip" href="../f/fastq.html">FASTQ</a>
+    
+      <a class="format-chip" href="../f/fasta.html">FASTA</a>
+    
+      <a class="format-chip" href="../f/sam.html">SAM</a>
+    
+      <a class="format-chip" href="../f/bam.html">BAM</a>
+    
+  </div>
+</div>
 
 
 <dark-mode style="position: fixed; top: 8px; left: 10px; z-index: 999;;display: none;" dark="Dark" light="Light"></dark-mode><script>const t=document;const e="_dark_mode_theme_";const s="permanent";const o="colorschemechange";const i="permanentcolorscheme";const h="light";const r="dark";const n=(t,e,s=e)=>{Object.defineProperty(t,s,{enumerable:true,get(){const t=this.getAttribute(e);return t===null?"":t},set(t){this.setAttribute(e,t)}})};const c=(t,e,s=e)=>{Object.defineProperty(t,s,{enumerable:true,get(){return this.hasAttribute(e)},set(t){if(t){this.setAttribute(e,"")}else{this.removeAttribute(e)}}})};class a extends HTMLElement{static get observedAttributes(){return["mode",h,r,s]}LOCAL_NANE=e;constructor(){super();this.t()}connectedCallback(){n(this,"mode");n(this,r);n(this,h);c(this,s);const a=localStorage.getItem(e);if(a&&[h,r].includes(a)){this.mode=a;this.permanent=true}if(this.permanent&&!a){localStorage.setItem(e,this.mode)}const l=[h,r].includes(a);if(this.permanent&&a){this.o()}else{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){this.mode=r;this.o()}if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches){this.mode=h;this.o()}}if(!this.permanent&&!l){window.matchMedia("(prefers-color-scheme: light)").onchange=t=>{this.mode=t.matches?h:r;this.o()};window.matchMedia("(prefers-color-scheme: dark)").onchange=t=>{this.mode=t.matches?r:h;this.o()}}const d=new MutationObserver(((s,h)=>{this.mode=t.documentElement.dataset.colorMode;if(this.permanent&&l){localStorage.setItem(e,this.mode);this.i(i,{permanent:this.permanent})}this.h();this.i(o,{colorScheme:this.mode})}));d.observe(t.documentElement,{attributes:true});this.i(o,{colorScheme:this.mode});this.h()}attributeChangedCallback(t,s,o){if(t==="mode"&&s!==o&&[h,r].includes(o)){const t=localStorage.getItem(e);if(this.mode===t){this.mode=o;this.h();this.o()}else if(this.mode&&this.mode!==t){this.h();this.o()}}else if((t===h||t===r)&&s!==o){this.h()}if(t==="permanent"&&typeof this.permanent==="boolean"){this.permanent?localStorage.setItem(e,this.mode):localStorage.removeItem(e)}}o(){t.documentElement.setAttribute("data-color-mode",this.mode)}h(){this.icon.textContent=this.mode===h?"🌒":"🌞";this.text.textContent=this.mode===h?this.getAttribute(r):this.getAttribute(h)}t(){var s=this.attachShadow({mode:"open"});this.label=t.createElement("span");this.label.setAttribute("class","wrapper");this.label.onclick=()=>{this.mode=this.mode===h?r:h;if(this.permanent){localStorage.setItem(e,this.mode)}this.o();this.h()};s.appendChild(this.label);this.icon=t.createElement("span");this.label.appendChild(this.icon);this.text=t.createElement("span");this.label.appendChild(this.text);const o=`
@@ -236,6 +253,7 @@ function copied(target, str) {
 <div class="footer ">
   <a target="_blank" href="https://github.com/11010tianyi/bioinformatics-command/new/master/bio-command">添加命令 / Add command</a> |
   <a href="../hot.html">命令列表 / Command list</a> |
+  <a href="../formats.html">格式索引 / Formats</a> |
   <a href="../contributors.html">资料来源 / Sources</a> |
   <a target="_blank" href="https://github.com/JoshuaChou2018/AutoBA">AutoBA</a> |
   <a target="_blank" href="https://github.com/tldr-pages/tldr">tldr-pages</a> |
@@ -249,11 +267,13 @@ function copied(target, str) {
     <span id="commands_info">
       16
     </span>
-    个生信高频命令 / curated bioinformatics commands.
+    个生信高频命令，
+    21
+    个文件格式 / curated commands and formats.
   </div>
 </div>
 
-<script type="text/javascript" src="../js/dt.js?v=1777881180799"></script>
-<script type="text/javascript" src="../js/index.js?v=1777881180799"></script>
+<script type="text/javascript" src="../js/dt.js?v=1778855445143"></script>
+<script type="text/javascript" src="../js/index.js?v=1778855445143"></script>
 </body>
 </html>

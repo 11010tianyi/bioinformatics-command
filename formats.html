@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="description" content="格式索引:生信文件格式索引。 - 中英双语生物信息命令速查。">
+    <meta name="keywords" content="Bioinformatics,生物信息,生信,Command,命令大全,FASTQ,BAM,VCF,BED,RNA-seq,ChIP-seq,格式索引,生信文件格式索引。">
+    <title>格式索引 - 生信命令大全 | Bioinformatics Commands</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/index.css?v=1778855445100">
+    <script src="js/dark-mode.min.js"></script>
+    <script type="module" src="js/github-corners.js"></script>
+</head>
+<body>
+<dark-mode permanent dark="Dark" light="Light" style="position: fixed;left: 10px;top: 8px; z-index: 999;"></dark-mode>
+
+<github-corners target="__blank" z-index="999" position="fixed" href="https://github.com/11010tianyi/bioinformatics-command"></github-corners>
+<div class="header header_list">
+  <div class="header_inner">
+      <div class="logo">
+          <a href="index.html" title="Bioinformatics Commands">
+            <span class="brand-main">Bio Commands</span>
+            <span class="brand-sub">生信命令大全</span>
+          </a>
+      </div>
+      <div class="search">
+          <ul class="search-list" id="result"></ul>
+          <input type="text" class="query" id="query" autocomplete="off" autofocus="autofocus" placeholder="samtools / VCF / RNA-seq / 比对"/>
+          <div class="enter-input">
+              <input type="hidden" id="current_path" value="/formats.html">
+              <button id="search_btn">Search</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="hotlist">
+  <ul>
+  
+    <li>
+      <a href="f/bam.html"><strong>BAM</strong> <span class="result-chip">Alignment</span> - SAM 的二进制压缩形式，用于存储 reads 到参考基因组的比对结果。 / Binary compressed representation of SAM for storing read alignments to a reference genome.</a>
+      
+      <p>Commands: BWA, samtools, MACS3, bedtools, featureCounts, STAR</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/bcf.html"><strong>BCF</strong> <span class="result-chip">Variant</span> - VCF 的二进制形式，适合高效存储和处理大规模变异数据。 / Binary representation of VCF for efficient storage and processing of variant data.</a>
+      
+      <p>Commands: bcftools</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/bed.html"><strong>BED</strong> <span class="result-chip">Genomic intervals</span> - 用 0-based half-open 坐标表示基因组区间的轻量文本格式。 / Lightweight tab-delimited interval format using 0-based half-open genomic coordinates.</a>
+      
+      <p>Commands: MACS3, bedtools</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/bedpe.html"><strong>BEDPE</strong> <span class="result-chip">Genomic intervals</span> - 用于表示成对基因组区间的 BED 扩展格式，常见于 paired-end peak calling 和结构变异。 / BED extension for paired genomic intervals, often used for paired-end peak calling and structural variants.</a>
+      
+      <p>Commands: MACS3</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/broadpeak.html"><strong>broadPeak</strong> <span class="result-chip">Peak</span> - 基于 BED 的宽峰格式，常用于组蛋白修饰等宽区域富集信号。 / BED-derived broad peak format commonly used for broad enrichment signals such as histone marks.</a>
+      
+      <p>Commands: MACS3</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/cram.html"><strong>CRAM</strong> <span class="result-chip">Alignment</span> - 面向比对数据的高压缩格式，通常需要参考基因组辅助解码。 / Highly compressed alignment format that usually relies on the reference genome for decoding.</a>
+      
+      <p>Commands: samtools</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/fasta.html"><strong>FASTA</strong> <span class="result-chip">Sequence</span> - 用 header 和序列行表示核酸或蛋白序列的基础文本格式。 / Basic text format for nucleotide or protein sequences with headers and sequence lines.</a>
+      
+      <p>Commands: Bowtie2, BWA, minimap2, Salmon, STAR, SeqKit</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/fastq.html"><strong>FASTQ</strong> <span class="result-chip">Sequence reads</span> - 保存测序 reads 及其碱基质量值的标准文本格式。 / Standard text format for sequencing reads and per-base quality scores.</a>
+      
+      <p>Commands: Bowtie2, BWA, minimap2, Cutadapt, fastp, FastQC, Salmon, STAR, SeqKit</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/gff.html"><strong>GFF</strong> <span class="result-chip">Annotation</span> - 通用基因组特征注释格式，用九列文本描述基因、转录本、外显子等 feature。 / General feature annotation format describing genes, transcripts, exons, and other genomic features in nine columns.</a>
+      
+      <p>Commands: bedtools</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/gtf.html"><strong>GTF</strong> <span class="result-chip">Annotation</span> - 常用于 RNA-seq 的基因注释格式，描述 gene、transcript、exon 等 feature。 / Gene annotation format widely used in RNA-seq workflows for genes, transcripts, and exons.</a>
+      
+      <p>Commands: bedtools, featureCounts, STAR</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/html.html"><strong>HTML</strong> <span class="result-chip">Report</span> - 常用于可视化 QC 和分析报告的网页格式。 / Web document format commonly used for visual QC and analysis reports.</a>
+      
+      <p>Commands: fastp, FastQC, MultiQC, Nextflow</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/json.html"><strong>JSON</strong> <span class="result-chip">Structured data</span> - 常用于工具报告、参数和结构化结果交换的轻量数据格式。 / Lightweight structured data format often used for tool reports, parameters, and result exchange.</a>
+      
+      <p>Commands: fastp, MultiQC, Nextflow</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/narrowpeak.html"><strong>narrowPeak</strong> <span class="result-chip">Peak</span> - 基于 BED 的窄峰格式，常用于 TF ChIP-seq 和 ATAC-seq peak 结果。 / BED-derived narrow peak format commonly used for TF ChIP-seq and ATAC-seq peaks.</a>
+      
+      <p>Commands: MACS3</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/nf.html"><strong>NF</strong> <span class="result-chip">Workflow</span> - Nextflow 流程脚本文件，描述 process、channel 和 workflow 逻辑。 / Nextflow pipeline script describing processes, channels, and workflow logic.</a>
+      
+      <p>Commands: Nextflow</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/paf.html"><strong>PAF</strong> <span class="result-chip">Alignment</span> - minimap2 默认输出的轻量 pairwise mapping 格式，适合长读长和组装比对摘要。 / Lightweight pairwise mapping format, default output of minimap2 for long-read and assembly alignments.</a>
+      
+      <p>Commands: minimap2</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/saf.html"><strong>SAF</strong> <span class="result-chip">Annotation</span> - featureCounts 支持的简化注释格式，用少量列描述可计数 feature。 / Simplified annotation format supported by featureCounts for countable genomic features.</a>
+      
+      <p>Commands: featureCounts</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/sam.html"><strong>SAM</strong> <span class="result-chip">Alignment</span> - 以文本形式保存 reads 比对结果的标准格式，是 BAM/CRAM 的可读源格式。 / Text-based standard format for read alignments; human-readable counterpart of BAM/CRAM.</a>
+      
+      <p>Commands: Bowtie2, BWA, minimap2, samtools, STAR</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/tsv.html"><strong>TSV</strong> <span class="result-chip">Table</span> - 以制表符分隔的表格文本格式，常用于统计结果和中间矩阵。 / Tab-separated table format commonly used for statistics, matrices, and intermediate results.</a>
+      
+      <p>Commands: MultiQC, featureCounts, Salmon</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/vcf.html"><strong>VCF</strong> <span class="result-chip">Variant</span> - 保存遗传变异、样本基因型和注释信息的标准文本格式。 / Standard text format for genetic variants, sample genotypes, and annotations.</a>
+      
+      <p>Commands: bedtools, bcftools</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/yaml.html"><strong>YAML</strong> <span class="result-chip">Configuration</span> - 常用于流程配置、环境定义和参数文件的人类可读结构化格式。 / Human-readable structured format commonly used for workflow configs, environments, and parameter files.</a>
+      
+      <p>Commands: Nextflow</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/zip.html"><strong>ZIP</strong> <span class="result-chip">Archive</span> - 通用压缩归档格式，FastQC 等工具会把机器可读结果打包为 ZIP。 / General archive format; tools such as FastQC package machine-readable outputs as ZIP files.</a>
+      
+      <p>Commands: FastQC</p>
+      
+    </li>
+  
+  </ul>
+</div>
+
+<div class="footer ">
+  <a target="_blank" href="https://github.com/11010tianyi/bioinformatics-command/new/master/bio-command">添加命令 / Add command</a> |
+  <a href="hot.html">命令列表 / Command list</a> |
+  <a href="formats.html">格式索引 / Formats</a> |
+  <a href="contributors.html">资料来源 / Sources</a> |
+  <a target="_blank" href="https://github.com/JoshuaChou2018/AutoBA">AutoBA</a> |
+  <a target="_blank" href="https://github.com/tldr-pages/tldr">tldr-pages</a> |
+  <a target="_blank" href="https://github.com/danielecook/Awesome-Bioinformatics">Awesome Bioinformatics</a>
+  <br />
+  <a href="https://github.com/11010tianyi/bioinformatics-command" target="_blank">GitHub</a> |
+  <a href="https://bioconda.github.io/" target="_blank">Bioconda</a> |
+  <a href="https://nf-co.re/" target="_blank">nf-core</a>
+  <div>
+    共收录
+    <span id="commands_info">
+      16
+    </span>
+    个生信高频命令，
+    21
+    个文件格式 / curated commands and formats.
+  </div>
+</div>
+
+<script type="text/javascript" src="js/dt.js?v=1778855445100"></script>
+<script type="text/javascript" src="js/index.js?v=1778855445100"></script>
+</body>
+</html>
