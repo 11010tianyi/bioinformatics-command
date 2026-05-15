@@ -9,7 +9,7 @@
     <meta name="keywords" content="Bioinformatics,生物信息,生信,Command,命令大全,FASTQ,BAM,VCF,BED,RNA-seq,ChIP-seq,格式索引,生信文件格式索引。">
     <title>格式索引 - 生信命令大全 | Bioinformatics Commands</title>
     <link rel="shortcut icon" href="img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="css/index.css?v=1778855445100">
+    <link rel="stylesheet" type="text/css" href="css/index.css?v=1778857177827">
     <script src="js/dark-mode.min.js"></script>
     <script type="module" src="js/github-corners.js"></script>
 </head>
@@ -42,7 +42,7 @@
     <li>
       <a href="f/bam.html"><strong>BAM</strong> <span class="result-chip">Alignment</span> - SAM 的二进制压缩形式，用于存储 reads 到参考基因组的比对结果。 / Binary compressed representation of SAM for storing read alignments to a reference genome.</a>
       
-      <p>Commands: BWA, samtools, MACS3, bedtools, featureCounts, STAR</p>
+      <p>Commands: BWA, samtools, MACS3, mosdepth, deepTools, bedtools, featureCounts, StringTie, STAR, FreeBayes, GATK</p>
       
     </li>
   
@@ -56,7 +56,7 @@
     <li>
       <a href="f/bed.html"><strong>BED</strong> <span class="result-chip">Genomic intervals</span> - 用 0-based half-open 坐标表示基因组区间的轻量文本格式。 / Lightweight tab-delimited interval format using 0-based half-open genomic coordinates.</a>
       
-      <p>Commands: MACS3, bedtools</p>
+      <p>Commands: MACS3, mosdepth, deepTools, bedtools</p>
       
     </li>
   
@@ -64,6 +64,13 @@
       <a href="f/bedpe.html"><strong>BEDPE</strong> <span class="result-chip">Genomic intervals</span> - 用于表示成对基因组区间的 BED 扩展格式，常见于 paired-end peak calling 和结构变异。 / BED extension for paired genomic intervals, often used for paired-end peak calling and structural variants.</a>
       
       <p>Commands: MACS3</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/bigwig.html"><strong>bigWig</strong> <span class="result-chip">Signal track</span> - 用于存储连续基因组信号轨道的二进制索引格式，常见于覆盖度、富集信号和浏览器展示。 / Indexed binary format for continuous genome signal tracks such as coverage and enrichment profiles.</a>
+      
+      <p>Commands: deepTools</p>
       
     </li>
   
@@ -77,49 +84,63 @@
     <li>
       <a href="f/cram.html"><strong>CRAM</strong> <span class="result-chip">Alignment</span> - 面向比对数据的高压缩格式，通常需要参考基因组辅助解码。 / Highly compressed alignment format that usually relies on the reference genome for decoding.</a>
       
-      <p>Commands: samtools</p>
+      <p>Commands: samtools, mosdepth, FreeBayes, GATK</p>
       
     </li>
   
     <li>
       <a href="f/fasta.html"><strong>FASTA</strong> <span class="result-chip">Sequence</span> - 用 header 和序列行表示核酸或蛋白序列的基础文本格式。 / Basic text format for nucleotide or protein sequences with headers and sequence lines.</a>
       
-      <p>Commands: Bowtie2, BWA, minimap2, Salmon, STAR, SeqKit</p>
+      <p>Commands: Bowtie2, BWA, minimap2, SPAdes, QUAST, BUSCO, Prokka, Kraken2, MAFFT, IQ-TREE 2, kallisto, Salmon, HISAT2, STAR, BLAST+, DIAMOND, MMseqs2, SeqKit, seqtk</p>
       
     </li>
   
     <li>
       <a href="f/fastq.html"><strong>FASTQ</strong> <span class="result-chip">Sequence reads</span> - 保存测序 reads 及其碱基质量值的标准文本格式。 / Standard text format for sequencing reads and per-base quality scores.</a>
       
-      <p>Commands: Bowtie2, BWA, minimap2, Cutadapt, fastp, FastQC, Salmon, STAR, SeqKit</p>
+      <p>Commands: Bowtie2, BWA, minimap2, SPAdes, SRA Toolkit, Cutadapt, fastp, Trim Galore, FastQC, Kraken2, kallisto, Salmon, HISAT2, STAR, SeqKit, seqtk</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/genbank.html"><strong>GenBank</strong> <span class="result-chip">Annotation</span> - NCBI GenBank 平面文件格式，可同时保存序列、feature 注释和来源信息。 / NCBI flat-file format for sequences, feature annotations, and source metadata.</a>
+      
+      <p>Commands: Prokka</p>
       
     </li>
   
     <li>
       <a href="f/gff.html"><strong>GFF</strong> <span class="result-chip">Annotation</span> - 通用基因组特征注释格式，用九列文本描述基因、转录本、外显子等 feature。 / General feature annotation format describing genes, transcripts, exons, and other genomic features in nine columns.</a>
       
-      <p>Commands: bedtools</p>
+      <p>Commands: QUAST, Prokka, bedtools, StringTie</p>
       
     </li>
   
     <li>
       <a href="f/gtf.html"><strong>GTF</strong> <span class="result-chip">Annotation</span> - 常用于 RNA-seq 的基因注释格式，描述 gene、transcript、exon 等 feature。 / Gene annotation format widely used in RNA-seq workflows for genes, transcripts, and exons.</a>
       
-      <p>Commands: bedtools, featureCounts, STAR</p>
+      <p>Commands: deepTools, bedtools, featureCounts, StringTie, STAR</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/gvcf.html"><strong>GVCF</strong> <span class="result-chip">Variant</span> - VCF 的参考置信度扩展，既记录变异位点，也记录非变异区间，常用于联合分型。 / Reference-confidence VCF extension that records variant sites and non-variant blocks for joint genotyping.</a>
+      
+      <p>Commands: GATK</p>
       
     </li>
   
     <li>
       <a href="f/html.html"><strong>HTML</strong> <span class="result-chip">Report</span> - 常用于可视化 QC 和分析报告的网页格式。 / Web document format commonly used for visual QC and analysis reports.</a>
       
-      <p>Commands: fastp, FastQC, MultiQC, Nextflow</p>
+      <p>Commands: QUAST, deepTools, fastp, Trim Galore, FastQC, MultiQC, SnpEff, Nextflow, Snakemake</p>
       
     </li>
   
     <li>
       <a href="f/json.html"><strong>JSON</strong> <span class="result-chip">Structured data</span> - 常用于工具报告、参数和结构化结果交换的轻量数据格式。 / Lightweight structured data format often used for tool reports, parameters, and result exchange.</a>
       
-      <p>Commands: fastp, MultiQC, Nextflow</p>
+      <p>Commands: BUSCO, fastp, MultiQC, Ensembl VEP, Nextflow, Snakemake</p>
       
     </li>
   
@@ -127,6 +148,13 @@
       <a href="f/narrowpeak.html"><strong>narrowPeak</strong> <span class="result-chip">Peak</span> - 基于 BED 的窄峰格式，常用于 TF ChIP-seq 和 ATAC-seq peak 结果。 / BED-derived narrow peak format commonly used for TF ChIP-seq and ATAC-seq peaks.</a>
       
       <p>Commands: MACS3</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/newick.html"><strong>Newick</strong> <span class="result-chip">Phylogeny</span> - 用括号嵌套表示系统发育树拓扑和分支长度的轻量文本格式。 / Lightweight text format for phylogenetic tree topology and branch lengths.</a>
+      
+      <p>Commands: IQ-TREE 2</p>
       
     </li>
   
@@ -145,6 +173,13 @@
     </li>
   
     <li>
+      <a href="f/pgen.html"><strong>PGEN</strong> <span class="result-chip">Genotype</span> - PLINK 2 的二进制基因型格式，通常与 PVAR 和 PSAM 一起使用。 / PLINK 2 binary genotype format, usually paired with PVAR variant metadata and PSAM sample metadata.</a>
+      
+      <p>Commands: PLINK 2</p>
+      
+    </li>
+  
+    <li>
       <a href="f/saf.html"><strong>SAF</strong> <span class="result-chip">Annotation</span> - featureCounts 支持的简化注释格式，用少量列描述可计数 feature。 / Simplified annotation format supported by featureCounts for countable genomic features.</a>
       
       <p>Commands: featureCounts</p>
@@ -154,28 +189,35 @@
     <li>
       <a href="f/sam.html"><strong>SAM</strong> <span class="result-chip">Alignment</span> - 以文本形式保存 reads 比对结果的标准格式，是 BAM/CRAM 的可读源格式。 / Text-based standard format for read alignments; human-readable counterpart of BAM/CRAM.</a>
       
-      <p>Commands: Bowtie2, BWA, minimap2, samtools, STAR</p>
+      <p>Commands: Bowtie2, BWA, minimap2, samtools, HISAT2, STAR, DIAMOND</p>
+      
+    </li>
+  
+    <li>
+      <a href="f/sra.html"><strong>SRA</strong> <span class="result-chip">Sequence archive</span> - NCBI Sequence Read Archive 的原始测序数据封装格式，常通过 SRA Toolkit 转换为 FASTQ。 / NCBI Sequence Read Archive container format, commonly converted to FASTQ with SRA Toolkit.</a>
+      
+      <p>Commands: SRA Toolkit</p>
       
     </li>
   
     <li>
       <a href="f/tsv.html"><strong>TSV</strong> <span class="result-chip">Table</span> - 以制表符分隔的表格文本格式，常用于统计结果和中间矩阵。 / Tab-separated table format commonly used for statistics, matrices, and intermediate results.</a>
       
-      <p>Commands: MultiQC, featureCounts, Salmon</p>
+      <p>Commands: QUAST, BUSCO, mosdepth, deepTools, Prokka, Kraken2, IQ-TREE 2, PLINK 2, MultiQC, featureCounts, kallisto, Salmon, StringTie, BLAST+, DIAMOND, MMseqs2, Ensembl VEP</p>
       
     </li>
   
     <li>
       <a href="f/vcf.html"><strong>VCF</strong> <span class="result-chip">Variant</span> - 保存遗传变异、样本基因型和注释信息的标准文本格式。 / Standard text format for genetic variants, sample genotypes, and annotations.</a>
       
-      <p>Commands: bedtools, bcftools</p>
+      <p>Commands: bedtools, PLINK 2, Ensembl VEP, SnpEff, FreeBayes, GATK, bcftools</p>
       
     </li>
   
     <li>
       <a href="f/yaml.html"><strong>YAML</strong> <span class="result-chip">Configuration</span> - 常用于流程配置、环境定义和参数文件的人类可读结构化格式。 / Human-readable structured format commonly used for workflow configs, environments, and parameter files.</a>
       
-      <p>Commands: Nextflow</p>
+      <p>Commands: Nextflow, Snakemake</p>
       
     </li>
   
@@ -204,15 +246,15 @@
   <div>
     共收录
     <span id="commands_info">
-      16
+      40
     </span>
     个生信高频命令，
-    21
+    27
     个文件格式 / curated commands and formats.
   </div>
 </div>
 
-<script type="text/javascript" src="js/dt.js?v=1778855445100"></script>
-<script type="text/javascript" src="js/index.js?v=1778855445100"></script>
+<script type="text/javascript" src="js/dt.js?v=1778857177828"></script>
+<script type="text/javascript" src="js/index.js?v=1778857177828"></script>
 </body>
 </html>

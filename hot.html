@@ -9,7 +9,7 @@
     <meta name="keywords" content="Bioinformatics,生物信息,生信,Command,命令大全,FASTQ,BAM,VCF,BED,RNA-seq,ChIP-seq,命令列表,中英双语生物信息命令速查，覆盖 FASTQ、BAM、VCF、BED、RNA-seq、ChIP-seq 和工作流工具。">
     <title>命令列表 - 生信命令大全 | Bioinformatics Commands</title>
     <link rel="shortcut icon" href="img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="css/index.css?v=1778855445098">
+    <link rel="stylesheet" type="text/css" href="css/index.css?v=1778857177824">
     <script src="js/dark-mode.min.js"></script>
     <script type="module" src="js/github-corners.js"></script>
 </head>
@@ -47,29 +47,77 @@
   
     <li><a href="c/samtools.html"><strong>samtools</strong> <span class="result-chip">Alignment</span> - 处理 SAM/BAM/CRAM 比对文件的核心工具箱。 / Core toolkit for manipulating SAM/BAM/CRAM alignment files.</a></li>
   
+    <li><a href="c/spades.html"><strong>SPAdes</strong> <span class="result-chip">Assembly</span> - 常用 de novo 组装器，覆盖细菌基因组、单细胞和宏基因组等场景。 / Popular de novo assembler for bacterial genomes, single-cell data, metagenomes, and related datasets.</a></li>
+  
+    <li><a href="c/quast.html"><strong>QUAST</strong> <span class="result-chip">Assembly QC</span> - 基因组组装质量评估工具，可输出 N50、总长度、错配、基因覆盖等报告。 / Genome assembly quality assessment tool reporting N50, total length, misassemblies, gene coverage, and related metrics.</a></li>
+  
     <li><a href="c/macs3.html"><strong>MACS3</strong> <span class="result-chip">ChIP-seq/ATAC-seq</span> - ChIP-seq/ATAC-seq 常用 peak calling 工具，MACS2 的后续版本。 / Peak caller for ChIP-seq and ATAC-seq; successor of MACS2.</a></li>
+  
+    <li><a href="c/busco.html"><strong>BUSCO</strong> <span class="result-chip">Completeness QC</span> - 基于单拷贝直系同源基因集评估基因组、转录组或蛋白集完整性的工具。 / Tool for assessing genome, transcriptome, or protein-set completeness using single-copy ortholog sets.</a></li>
+  
+    <li><a href="c/mosdepth.html"><strong>mosdepth</strong> <span class="result-chip">Coverage</span> - 快速计算 BAM/CRAM 覆盖度、深度分布和目标区域覆盖统计的工具。 / Fast tool for BAM/CRAM coverage, depth distribution, and target-region coverage statistics.</a></li>
+  
+    <li><a href="c/sra-tools.html"><strong>SRA Toolkit</strong> <span class="result-chip">Data download</span> - NCBI SRA 数据下载与 FASTQ 转换工具集，常用 `prefetch` 和 `fasterq-dump`。 / Toolkit for downloading NCBI SRA runs and converting them to FASTQ, commonly via `prefetch` and `fasterq-dump`.</a></li>
+  
+    <li><a href="c/deeptools.html"><strong>deepTools</strong> <span class="result-chip">Epigenomics</span> - 面向 ChIP-seq、ATAC-seq、RNA-seq 等数据的覆盖度计算、矩阵生成和可视化工具集。 / Toolkit for coverage calculation, matrix generation, and visualization for ChIP-seq, ATAC-seq, RNA-seq, and related assays.</a></li>
   
     <li><a href="c/cutadapt.html"><strong>Cutadapt</strong> <span class="result-chip">FASTQ preprocessing</span> - 从 FASTQ reads 中去除接头、引物和低质量片段。 / Removes adapters, primers, and low-quality sequence from FASTQ reads.</a></li>
   
     <li><a href="c/fastp.html"><strong>fastp</strong> <span class="result-chip">FASTQ preprocessing</span> - 一体化 FASTQ 质控、过滤、接头剪切和 HTML/JSON 报告工具。 / All-in-one FASTQ quality control, filtering, adapter trimming, and reporting tool.</a></li>
   
+    <li><a href="c/trim-galore.html"><strong>Trim Galore</strong> <span class="result-chip">FASTQ preprocessing</span> - Cutadapt 和 FastQC 的常用封装工具，用于 FASTQ 接头剪切、质量过滤和报告生成。 / Wrapper around Cutadapt and FastQC for adapter trimming, quality filtering, and reporting.</a></li>
+  
     <li><a href="c/fastqc.html"><strong>FastQC</strong> <span class="result-chip">FASTQ QC</span> - 生成 FASTQ 测序质量报告，常用于原始数据和清洗后数据检查。 / Generates FASTQ sequencing quality reports for raw and cleaned reads.</a></li>
   
+    <li><a href="c/prokka.html"><strong>Prokka</strong> <span class="result-chip">Genome annotation</span> - 原核基因组快速注释工具，可从组装 FASTA 生成 GFF、GenBank、蛋白序列和表格结果。 / Rapid prokaryotic genome annotation tool producing GFF, GenBank, protein FASTA, and tabular outputs from assemblies.</a></li>
+  
     <li><a href="c/bedtools.html"><strong>bedtools</strong> <span class="result-chip">Genomic intervals</span> - 对 BED/GFF/GTF/VCF/BAM 等基因组区间做交集、覆盖度、最近邻和格式转换。 / Genome arithmetic toolkit for intersections, coverage, closest features, and format conversion.</a></li>
+  
+    <li><a href="c/kraken2.html"><strong>Kraken2</strong> <span class="result-chip">Metagenomics</span> - 基于 k-mer 的宏基因组 reads 分类工具，常用于微生物群落物种组成分析。 / k-mer based metagenomic read classifier commonly used for microbial taxonomic profiling.</a></li>
+  
+    <li><a href="c/mafft.html"><strong>MAFFT</strong> <span class="result-chip">Multiple sequence alignment</span> - 常用多序列比对工具，适合核酸或蛋白序列的 MSA 构建。 / Widely used multiple sequence alignment tool for nucleotide and protein sequences.</a></li>
+  
+    <li><a href="c/iqtree2.html"><strong>IQ-TREE 2</strong> <span class="result-chip">Phylogeny</span> - 最大似然系统发育树构建工具，集成模型选择、bootstrap 和多种树评估方法。 / Maximum-likelihood phylogenetic inference tool with model selection, bootstrap, and tree testing methods.</a></li>
+  
+    <li><a href="c/plink2.html"><strong>PLINK 2</strong> <span class="result-chip">Population genetics</span> - 大规模基因型数据 QC、转换和关联分析的常用命令行工具。 / Common command-line toolkit for large-scale genotype QC, conversion, and association analysis.</a></li>
   
     <li><a href="c/multiqc.html"><strong>MultiQC</strong> <span class="result-chip">QC summary</span> - 汇总 FastQC、fastp、STAR、samtools 等工具报告，生成统一 QC 报告。 / Aggregates reports from tools such as FastQC, fastp, STAR, and samtools into one QC report.</a></li>
   
     <li><a href="c/featurecounts.html"><strong>featureCounts</strong> <span class="result-chip">RNA-seq</span> - 基于注释文件把 RNA-seq 比对 reads 计数到 gene/exon/feature。 / Assigns aligned RNA-seq reads to genes, exons, or other genomic features.</a></li>
   
+    <li><a href="c/kallisto.html"><strong>kallisto</strong> <span class="result-chip">RNA-seq</span> - 基于 pseudoalignment 的快速 RNA-seq 转录本定量工具。 / Fast transcript-level RNA-seq quantification tool based on pseudoalignment.</a></li>
+  
     <li><a href="c/salmon.html"><strong>Salmon</strong> <span class="result-chip">RNA-seq</span> - 快速 RNA-seq transcript-level 定量工具，常用于无比对或准比对定量流程。 / Fast transcript-level RNA-seq quantification tool using lightweight mapping methods.</a></li>
+  
+    <li><a href="c/stringtie.html"><strong>StringTie</strong> <span class="result-chip">RNA-seq</span> - 从 RNA-seq 比对结果组装转录本并估计表达量的工具。 / Tool for transcript assembly and expression estimation from RNA-seq alignments.</a></li>
+  
+    <li><a href="c/hisat2.html"><strong>HISAT2</strong> <span class="result-chip">RNA-seq alignment</span> - 面向 RNA-seq 的快速剪接感知比对工具，也可用于部分 DNA reads 比对场景。 / Fast splice-aware aligner for RNA-seq reads, also usable for some DNA read alignment scenarios.</a></li>
   
     <li><a href="c/star.html"><strong>STAR</strong> <span class="result-chip">RNA-seq alignment</span> - 高性能 RNA-seq spliced aligner，常用于 bulk RNA-seq reads 到基因组比对。 / High-performance RNA-seq spliced aligner widely used for mapping reads to a genome.</a></li>
   
+    <li><a href="c/blast-plus.html"><strong>BLAST+</strong> <span class="result-chip">Sequence search</span> - NCBI BLAST+ 命令行工具，用于核酸或蛋白序列相似性搜索。 / NCBI BLAST+ command-line tools for nucleotide and protein sequence similarity search.</a></li>
+  
+    <li><a href="c/diamond.html"><strong>DIAMOND</strong> <span class="result-chip">Sequence search</span> - 高速蛋白序列比对工具，常作为 BLASTP/BLASTX 的快速替代。 / Fast protein aligner commonly used as a high-speed alternative to BLASTP/BLASTX.</a></li>
+  
+    <li><a href="c/mmseqs2.html"><strong>MMseqs2</strong> <span class="result-chip">Sequence search</span> - 高性能序列搜索和聚类工具，适合大规模蛋白或核酸数据集。 / High-performance sequence search and clustering suite for large protein or nucleotide datasets.</a></li>
+  
     <li><a href="c/seqkit.html"><strong>SeqKit</strong> <span class="result-chip">Sequence toolkit</span> - 高性能 FASTA/FASTQ 命令行工具箱，适合统计、筛选、抽样、格式转换和序列操作。 / Fast FASTA/FASTQ toolkit for statistics, filtering, sampling, conversion, and sequence operations.</a></li>
+  
+    <li><a href="c/seqtk.html"><strong>seqtk</strong> <span class="result-chip">Sequence toolkit</span> - 轻量 FASTA/FASTQ 命令行工具，适合抽样、截取、格式转换和基础处理。 / Lightweight FASTA/FASTQ toolkit for subsampling, extraction, format conversion, and basic sequence operations.</a></li>
+  
+    <li><a href="c/vep.html"><strong>Ensembl VEP</strong> <span class="result-chip">Variant annotation</span> - Ensembl Variant Effect Predictor，用于注释变异对转录本、蛋白和调控区域的潜在影响。 / Ensembl Variant Effect Predictor annotates variant consequences on transcripts, proteins, and regulatory regions.</a></li>
+  
+    <li><a href="c/snpeff.html"><strong>SnpEff</strong> <span class="result-chip">Variant annotation</span> - 快速变异影响注释工具，可为 VCF 添加基因、转录本和预测后果信息。 / Fast variant effect annotation tool that adds gene, transcript, and consequence annotations to VCF files.</a></li>
+  
+    <li><a href="c/freebayes.html"><strong>FreeBayes</strong> <span class="result-chip">Variant calling</span> - 基于 haplotype 的变异检测工具，可从 BAM/CRAM 中调用 SNP、indel 和复杂变异。 / Haplotype-based variant caller for SNPs, indels, and complex variants from BAM/CRAM alignments.</a></li>
+  
+    <li><a href="c/gatk.html"><strong>GATK</strong> <span class="result-chip">Variant calling</span> - Broad Institute 的变异分析工具箱，常用于 germline calling、GVCF 联合分型和变异过滤。 / Broad Institute toolkit for variant analysis, commonly used for germline calling, GVCF joint genotyping, and filtering.</a></li>
   
     <li><a href="c/bcftools.html"><strong>bcftools</strong> <span class="result-chip">VCF/BCF</span> - 读取、过滤、规范化、合并、查询和注释 VCF/BCF 变异文件。 / Toolkit for viewing, filtering, normalizing, merging, querying, and annotating VCF/BCF variant files.</a></li>
   
     <li><a href="c/nextflow.html"><strong>Nextflow</strong> <span class="result-chip">Workflow</span> - 面向可复现生信流程的工作流引擎，常与 nf-core、Conda、Docker/Singularity 配合使用。 / Workflow engine for reproducible bioinformatics pipelines, commonly used with nf-core, Conda, Docker, and Singularity.</a></li>
+  
+    <li><a href="c/snakemake.html"><strong>Snakemake</strong> <span class="result-chip">Workflow</span> - Python 风格的可复现工作流引擎，常用于本地、HPC 和云端生信流程编排。 / Pythonic workflow engine for reproducible bioinformatics pipelines on local machines, HPC, and cloud environments.</a></li>
   
   </ul>
 </div>
@@ -88,15 +136,15 @@
   <div>
     共收录
     <span id="commands_info">
-      16
+      40
     </span>
     个生信高频命令，
-    21
+    27
     个文件格式 / curated commands and formats.
   </div>
 </div>
 
-<script type="text/javascript" src="js/dt.js?v=1778855445099"></script>
-<script type="text/javascript" src="js/index.js?v=1778855445099"></script>
+<script type="text/javascript" src="js/dt.js?v=1778857177825"></script>
+<script type="text/javascript" src="js/index.js?v=1778857177825"></script>
 </body>
 </html>
