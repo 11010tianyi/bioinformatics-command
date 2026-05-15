@@ -31,6 +31,18 @@
         "category": "ChIP-seq/ATAC-seq"
       },
       {
+        "n": "mosdepth",
+        "p": "/mosdepth",
+        "d": "快速计算 BAM/CRAM 覆盖度、深度分布和目标区域覆盖统计的工具。 / Fast tool for BAM/CRAM coverage, depth distribution, and target-region coverage statistics.",
+        "category": "Coverage"
+      },
+      {
+        "n": "deepTools",
+        "p": "/deeptools",
+        "d": "面向 ChIP-seq、ATAC-seq、RNA-seq 等数据的覆盖度计算、矩阵生成和可视化工具集。 / Toolkit for coverage calculation, matrix generation, and visualization for ChIP-seq, ATAC-seq, RNA-seq, and related assays.",
+        "category": "Epigenomics"
+      },
+      {
         "n": "bedtools",
         "p": "/bedtools",
         "d": "对 BED/GFF/GTF/VCF/BAM 等基因组区间做交集、覆盖度、最近邻和格式转换。 / Genome arithmetic toolkit for intersections, coverage, closest features, and format conversion.",
@@ -43,13 +55,31 @@
         "category": "RNA-seq"
       },
       {
+        "n": "StringTie",
+        "p": "/stringtie",
+        "d": "从 RNA-seq 比对结果组装转录本并估计表达量的工具。 / Tool for transcript assembly and expression estimation from RNA-seq alignments.",
+        "category": "RNA-seq"
+      },
+      {
         "n": "STAR",
         "p": "/star",
         "d": "高性能 RNA-seq spliced aligner，常用于 bulk RNA-seq reads 到基因组比对。 / High-performance RNA-seq spliced aligner widely used for mapping reads to a genome.",
         "category": "RNA-seq alignment"
+      },
+      {
+        "n": "FreeBayes",
+        "p": "/freebayes",
+        "d": "基于 haplotype 的变异检测工具，可从 BAM/CRAM 中调用 SNP、indel 和复杂变异。 / Haplotype-based variant caller for SNPs, indels, and complex variants from BAM/CRAM alignments.",
+        "category": "Variant calling"
+      },
+      {
+        "n": "GATK",
+        "p": "/gatk",
+        "d": "Broad Institute 的变异分析工具箱，常用于 germline calling、GVCF 联合分型和变异过滤。 / Broad Institute toolkit for variant analysis, commonly used for germline calling, GVCF joint genotyping, and filtering.",
+        "category": "Variant calling"
       }
     ],
-    "k": "BAM SAM 的二进制压缩形式，用于存储 reads 到参考基因组的比对结果。 / Binary compressed representation of SAM for storing read alignments to a reference genome. Alignment Binary Alignment Map .bam BWA samtools MACS3 bedtools featureCounts STAR"
+    "k": "BAM SAM 的二进制压缩形式，用于存储 reads 到参考基因组的比对结果。 / Binary compressed representation of SAM for storing read alignments to a reference genome. Alignment Binary Alignment Map .bam BWA samtools MACS3 mosdepth deepTools bedtools featureCounts StringTie STAR FreeBayes GATK"
   },
   "BCF": {
     "n": "BCF",
@@ -93,13 +123,25 @@
         "category": "ChIP-seq/ATAC-seq"
       },
       {
+        "n": "mosdepth",
+        "p": "/mosdepth",
+        "d": "快速计算 BAM/CRAM 覆盖度、深度分布和目标区域覆盖统计的工具。 / Fast tool for BAM/CRAM coverage, depth distribution, and target-region coverage statistics.",
+        "category": "Coverage"
+      },
+      {
+        "n": "deepTools",
+        "p": "/deeptools",
+        "d": "面向 ChIP-seq、ATAC-seq、RNA-seq 等数据的覆盖度计算、矩阵生成和可视化工具集。 / Toolkit for coverage calculation, matrix generation, and visualization for ChIP-seq, ATAC-seq, RNA-seq, and related assays.",
+        "category": "Epigenomics"
+      },
+      {
         "n": "bedtools",
         "p": "/bedtools",
         "d": "对 BED/GFF/GTF/VCF/BAM 等基因组区间做交集、覆盖度、最近邻和格式转换。 / Genome arithmetic toolkit for intersections, coverage, closest features, and format conversion.",
         "category": "Genomic intervals"
       }
     ],
-    "k": "BED 用 0-based half-open 坐标表示基因组区间的轻量文本格式。 / Lightweight tab-delimited interval format using 0-based half-open genomic coordinates. Genomic intervals .bed Browser Extensible Data MACS3 bedtools"
+    "k": "BED 用 0-based half-open 坐标表示基因组区间的轻量文本格式。 / Lightweight tab-delimited interval format using 0-based half-open genomic coordinates. Genomic intervals .bed Browser Extensible Data MACS3 mosdepth deepTools bedtools"
   },
   "BEDPE": {
     "n": "BEDPE",
@@ -122,6 +164,29 @@
       }
     ],
     "k": "BEDPE 用于表示成对基因组区间的 BED 扩展格式，常见于 paired-end peak calling 和结构变异。 / BED extension for paired genomic intervals, often used for paired-end peak calling and structural variants. Genomic intervals .bedpe paired-end BED MACS3"
+  },
+  "bigWig": {
+    "n": "bigWig",
+    "slug": "bigwig",
+    "f": "bigwig.md",
+    "p": "/f/bigwig.html",
+    "d": "用于存储连续基因组信号轨道的二进制索引格式，常见于覆盖度、富集信号和浏览器展示。 / Indexed binary format for continuous genome signal tracks such as coverage and enrichment profiles.",
+    "category": "Signal track",
+    "aliases": [
+      "bw",
+      "coverage track",
+      "genome browser track"
+    ],
+    "official": "https://genome.ucsc.edu/goldenPath/help/bigWig.html",
+    "usedBy": [
+      {
+        "n": "deepTools",
+        "p": "/deeptools",
+        "d": "面向 ChIP-seq、ATAC-seq、RNA-seq 等数据的覆盖度计算、矩阵生成和可视化工具集。 / Toolkit for coverage calculation, matrix generation, and visualization for ChIP-seq, ATAC-seq, RNA-seq, and related assays.",
+        "category": "Epigenomics"
+      }
+    ],
+    "k": "bigWig 用于存储连续基因组信号轨道的二进制索引格式，常见于覆盖度、富集信号和浏览器展示。 / Indexed binary format for continuous genome signal tracks such as coverage and enrichment profiles. Signal track bw coverage track genome browser track deepTools"
   },
   "broadPeak": {
     "n": "broadPeak",
@@ -162,9 +227,27 @@
         "p": "/samtools",
         "d": "处理 SAM/BAM/CRAM 比对文件的核心工具箱。 / Core toolkit for manipulating SAM/BAM/CRAM alignment files.",
         "category": "Alignment"
+      },
+      {
+        "n": "mosdepth",
+        "p": "/mosdepth",
+        "d": "快速计算 BAM/CRAM 覆盖度、深度分布和目标区域覆盖统计的工具。 / Fast tool for BAM/CRAM coverage, depth distribution, and target-region coverage statistics.",
+        "category": "Coverage"
+      },
+      {
+        "n": "FreeBayes",
+        "p": "/freebayes",
+        "d": "基于 haplotype 的变异检测工具，可从 BAM/CRAM 中调用 SNP、indel 和复杂变异。 / Haplotype-based variant caller for SNPs, indels, and complex variants from BAM/CRAM alignments.",
+        "category": "Variant calling"
+      },
+      {
+        "n": "GATK",
+        "p": "/gatk",
+        "d": "Broad Institute 的变异分析工具箱，常用于 germline calling、GVCF 联合分型和变异过滤。 / Broad Institute toolkit for variant analysis, commonly used for germline calling, GVCF joint genotyping, and filtering.",
+        "category": "Variant calling"
       }
     ],
-    "k": "CRAM 面向比对数据的高压缩格式，通常需要参考基因组辅助解码。 / Highly compressed alignment format that usually relies on the reference genome for decoding. Alignment .cram samtools"
+    "k": "CRAM 面向比对数据的高压缩格式，通常需要参考基因组辅助解码。 / Highly compressed alignment format that usually relies on the reference genome for decoding. Alignment .cram samtools mosdepth FreeBayes GATK"
   },
   "FASTA": {
     "n": "FASTA",
@@ -200,10 +283,64 @@
         "category": "Alignment"
       },
       {
+        "n": "SPAdes",
+        "p": "/spades",
+        "d": "常用 de novo 组装器，覆盖细菌基因组、单细胞和宏基因组等场景。 / Popular de novo assembler for bacterial genomes, single-cell data, metagenomes, and related datasets.",
+        "category": "Assembly"
+      },
+      {
+        "n": "QUAST",
+        "p": "/quast",
+        "d": "基因组组装质量评估工具，可输出 N50、总长度、错配、基因覆盖等报告。 / Genome assembly quality assessment tool reporting N50, total length, misassemblies, gene coverage, and related metrics.",
+        "category": "Assembly QC"
+      },
+      {
+        "n": "BUSCO",
+        "p": "/busco",
+        "d": "基于单拷贝直系同源基因集评估基因组、转录组或蛋白集完整性的工具。 / Tool for assessing genome, transcriptome, or protein-set completeness using single-copy ortholog sets.",
+        "category": "Completeness QC"
+      },
+      {
+        "n": "Prokka",
+        "p": "/prokka",
+        "d": "原核基因组快速注释工具，可从组装 FASTA 生成 GFF、GenBank、蛋白序列和表格结果。 / Rapid prokaryotic genome annotation tool producing GFF, GenBank, protein FASTA, and tabular outputs from assemblies.",
+        "category": "Genome annotation"
+      },
+      {
+        "n": "Kraken2",
+        "p": "/kraken2",
+        "d": "基于 k-mer 的宏基因组 reads 分类工具，常用于微生物群落物种组成分析。 / k-mer based metagenomic read classifier commonly used for microbial taxonomic profiling.",
+        "category": "Metagenomics"
+      },
+      {
+        "n": "MAFFT",
+        "p": "/mafft",
+        "d": "常用多序列比对工具，适合核酸或蛋白序列的 MSA 构建。 / Widely used multiple sequence alignment tool for nucleotide and protein sequences.",
+        "category": "Multiple sequence alignment"
+      },
+      {
+        "n": "IQ-TREE 2",
+        "p": "/iqtree2",
+        "d": "最大似然系统发育树构建工具，集成模型选择、bootstrap 和多种树评估方法。 / Maximum-likelihood phylogenetic inference tool with model selection, bootstrap, and tree testing methods.",
+        "category": "Phylogeny"
+      },
+      {
+        "n": "kallisto",
+        "p": "/kallisto",
+        "d": "基于 pseudoalignment 的快速 RNA-seq 转录本定量工具。 / Fast transcript-level RNA-seq quantification tool based on pseudoalignment.",
+        "category": "RNA-seq"
+      },
+      {
         "n": "Salmon",
         "p": "/salmon",
         "d": "快速 RNA-seq transcript-level 定量工具，常用于无比对或准比对定量流程。 / Fast transcript-level RNA-seq quantification tool using lightweight mapping methods.",
         "category": "RNA-seq"
+      },
+      {
+        "n": "HISAT2",
+        "p": "/hisat2",
+        "d": "面向 RNA-seq 的快速剪接感知比对工具，也可用于部分 DNA reads 比对场景。 / Fast splice-aware aligner for RNA-seq reads, also usable for some DNA read alignment scenarios.",
+        "category": "RNA-seq alignment"
       },
       {
         "n": "STAR",
@@ -212,13 +349,37 @@
         "category": "RNA-seq alignment"
       },
       {
+        "n": "BLAST+",
+        "p": "/blast-plus",
+        "d": "NCBI BLAST+ 命令行工具，用于核酸或蛋白序列相似性搜索。 / NCBI BLAST+ command-line tools for nucleotide and protein sequence similarity search.",
+        "category": "Sequence search"
+      },
+      {
+        "n": "DIAMOND",
+        "p": "/diamond",
+        "d": "高速蛋白序列比对工具，常作为 BLASTP/BLASTX 的快速替代。 / Fast protein aligner commonly used as a high-speed alternative to BLASTP/BLASTX.",
+        "category": "Sequence search"
+      },
+      {
+        "n": "MMseqs2",
+        "p": "/mmseqs2",
+        "d": "高性能序列搜索和聚类工具，适合大规模蛋白或核酸数据集。 / High-performance sequence search and clustering suite for large protein or nucleotide datasets.",
+        "category": "Sequence search"
+      },
+      {
         "n": "SeqKit",
         "p": "/seqkit",
         "d": "高性能 FASTA/FASTQ 命令行工具箱，适合统计、筛选、抽样、格式转换和序列操作。 / Fast FASTA/FASTQ toolkit for statistics, filtering, sampling, conversion, and sequence operations.",
         "category": "Sequence toolkit"
+      },
+      {
+        "n": "seqtk",
+        "p": "/seqtk",
+        "d": "轻量 FASTA/FASTQ 命令行工具，适合抽样、截取、格式转换和基础处理。 / Lightweight FASTA/FASTQ toolkit for subsampling, extraction, format conversion, and basic sequence operations.",
+        "category": "Sequence toolkit"
       }
     ],
-    "k": "FASTA 用 header 和序列行表示核酸或蛋白序列的基础文本格式。 / Basic text format for nucleotide or protein sequences with headers and sequence lines. Sequence .fa .fasta .fna .faa Bowtie2 BWA minimap2 Salmon STAR SeqKit"
+    "k": "FASTA 用 header 和序列行表示核酸或蛋白序列的基础文本格式。 / Basic text format for nucleotide or protein sequences with headers and sequence lines. Sequence .fa .fasta .fna .faa Bowtie2 BWA minimap2 SPAdes QUAST BUSCO Prokka Kraken2 MAFFT IQ-TREE 2 kallisto Salmon HISAT2 STAR BLAST+ DIAMOND MMseqs2 SeqKit seqtk"
   },
   "FASTQ": {
     "n": "FASTQ",
@@ -253,6 +414,18 @@
         "category": "Alignment"
       },
       {
+        "n": "SPAdes",
+        "p": "/spades",
+        "d": "常用 de novo 组装器，覆盖细菌基因组、单细胞和宏基因组等场景。 / Popular de novo assembler for bacterial genomes, single-cell data, metagenomes, and related datasets.",
+        "category": "Assembly"
+      },
+      {
+        "n": "SRA Toolkit",
+        "p": "/sra-tools",
+        "d": "NCBI SRA 数据下载与 FASTQ 转换工具集，常用 `prefetch` 和 `fasterq-dump`。 / Toolkit for downloading NCBI SRA runs and converting them to FASTQ, commonly via `prefetch` and `fasterq-dump`.",
+        "category": "Data download"
+      },
+      {
         "n": "Cutadapt",
         "p": "/cutadapt",
         "d": "从 FASTQ reads 中去除接头、引物和低质量片段。 / Removes adapters, primers, and low-quality sequence from FASTQ reads.",
@@ -265,16 +438,40 @@
         "category": "FASTQ preprocessing"
       },
       {
+        "n": "Trim Galore",
+        "p": "/trim-galore",
+        "d": "Cutadapt 和 FastQC 的常用封装工具，用于 FASTQ 接头剪切、质量过滤和报告生成。 / Wrapper around Cutadapt and FastQC for adapter trimming, quality filtering, and reporting.",
+        "category": "FASTQ preprocessing"
+      },
+      {
         "n": "FastQC",
         "p": "/fastqc",
         "d": "生成 FASTQ 测序质量报告，常用于原始数据和清洗后数据检查。 / Generates FASTQ sequencing quality reports for raw and cleaned reads.",
         "category": "FASTQ QC"
       },
       {
+        "n": "Kraken2",
+        "p": "/kraken2",
+        "d": "基于 k-mer 的宏基因组 reads 分类工具，常用于微生物群落物种组成分析。 / k-mer based metagenomic read classifier commonly used for microbial taxonomic profiling.",
+        "category": "Metagenomics"
+      },
+      {
+        "n": "kallisto",
+        "p": "/kallisto",
+        "d": "基于 pseudoalignment 的快速 RNA-seq 转录本定量工具。 / Fast transcript-level RNA-seq quantification tool based on pseudoalignment.",
+        "category": "RNA-seq"
+      },
+      {
         "n": "Salmon",
         "p": "/salmon",
         "d": "快速 RNA-seq transcript-level 定量工具，常用于无比对或准比对定量流程。 / Fast transcript-level RNA-seq quantification tool using lightweight mapping methods.",
         "category": "RNA-seq"
+      },
+      {
+        "n": "HISAT2",
+        "p": "/hisat2",
+        "d": "面向 RNA-seq 的快速剪接感知比对工具，也可用于部分 DNA reads 比对场景。 / Fast splice-aware aligner for RNA-seq reads, also usable for some DNA read alignment scenarios.",
+        "category": "RNA-seq alignment"
       },
       {
         "n": "STAR",
@@ -287,9 +484,38 @@
         "p": "/seqkit",
         "d": "高性能 FASTA/FASTQ 命令行工具箱，适合统计、筛选、抽样、格式转换和序列操作。 / Fast FASTA/FASTQ toolkit for statistics, filtering, sampling, conversion, and sequence operations.",
         "category": "Sequence toolkit"
+      },
+      {
+        "n": "seqtk",
+        "p": "/seqtk",
+        "d": "轻量 FASTA/FASTQ 命令行工具，适合抽样、截取、格式转换和基础处理。 / Lightweight FASTA/FASTQ toolkit for subsampling, extraction, format conversion, and basic sequence operations.",
+        "category": "Sequence toolkit"
       }
     ],
-    "k": "FASTQ 保存测序 reads 及其碱基质量值的标准文本格式。 / Standard text format for sequencing reads and per-base quality scores. Sequence reads .fq .fastq fastq.gz Bowtie2 BWA minimap2 Cutadapt fastp FastQC Salmon STAR SeqKit"
+    "k": "FASTQ 保存测序 reads 及其碱基质量值的标准文本格式。 / Standard text format for sequencing reads and per-base quality scores. Sequence reads .fq .fastq fastq.gz Bowtie2 BWA minimap2 SPAdes SRA Toolkit Cutadapt fastp Trim Galore FastQC Kraken2 kallisto Salmon HISAT2 STAR SeqKit seqtk"
+  },
+  "GenBank": {
+    "n": "GenBank",
+    "slug": "genbank",
+    "f": "genbank.md",
+    "p": "/f/genbank.html",
+    "d": "NCBI GenBank 平面文件格式，可同时保存序列、feature 注释和来源信息。 / NCBI flat-file format for sequences, feature annotations, and source metadata.",
+    "category": "Annotation",
+    "aliases": [
+      "GBK",
+      "GBFF",
+      "flat file"
+    ],
+    "official": "https://www.ncbi.nlm.nih.gov/Sitemap/samplerecord.html",
+    "usedBy": [
+      {
+        "n": "Prokka",
+        "p": "/prokka",
+        "d": "原核基因组快速注释工具，可从组装 FASTA 生成 GFF、GenBank、蛋白序列和表格结果。 / Rapid prokaryotic genome annotation tool producing GFF, GenBank, protein FASTA, and tabular outputs from assemblies.",
+        "category": "Genome annotation"
+      }
+    ],
+    "k": "GenBank NCBI GenBank 平面文件格式，可同时保存序列、feature 注释和来源信息。 / NCBI flat-file format for sequences, feature annotations, and source metadata. Annotation GBK GBFF flat file Prokka"
   },
   "GFF": {
     "n": "GFF",
@@ -306,13 +532,31 @@
     "official": "https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md",
     "usedBy": [
       {
+        "n": "QUAST",
+        "p": "/quast",
+        "d": "基因组组装质量评估工具，可输出 N50、总长度、错配、基因覆盖等报告。 / Genome assembly quality assessment tool reporting N50, total length, misassemblies, gene coverage, and related metrics.",
+        "category": "Assembly QC"
+      },
+      {
+        "n": "Prokka",
+        "p": "/prokka",
+        "d": "原核基因组快速注释工具，可从组装 FASTA 生成 GFF、GenBank、蛋白序列和表格结果。 / Rapid prokaryotic genome annotation tool producing GFF, GenBank, protein FASTA, and tabular outputs from assemblies.",
+        "category": "Genome annotation"
+      },
+      {
         "n": "bedtools",
         "p": "/bedtools",
         "d": "对 BED/GFF/GTF/VCF/BAM 等基因组区间做交集、覆盖度、最近邻和格式转换。 / Genome arithmetic toolkit for intersections, coverage, closest features, and format conversion.",
         "category": "Genomic intervals"
+      },
+      {
+        "n": "StringTie",
+        "p": "/stringtie",
+        "d": "从 RNA-seq 比对结果组装转录本并估计表达量的工具。 / Tool for transcript assembly and expression estimation from RNA-seq alignments.",
+        "category": "RNA-seq"
       }
     ],
-    "k": "GFF 通用基因组特征注释格式，用九列文本描述基因、转录本、外显子等 feature。 / General feature annotation format describing genes, transcripts, exons, and other genomic features in nine columns. Annotation GFF3 .gff .gff3 bedtools"
+    "k": "GFF 通用基因组特征注释格式，用九列文本描述基因、转录本、外显子等 feature。 / General feature annotation format describing genes, transcripts, exons, and other genomic features in nine columns. Annotation GFF3 .gff .gff3 QUAST Prokka bedtools StringTie"
   },
   "GTF": {
     "n": "GTF",
@@ -328,6 +572,12 @@
     "official": "https://www.gencodegenes.org/pages/data_format.html",
     "usedBy": [
       {
+        "n": "deepTools",
+        "p": "/deeptools",
+        "d": "面向 ChIP-seq、ATAC-seq、RNA-seq 等数据的覆盖度计算、矩阵生成和可视化工具集。 / Toolkit for coverage calculation, matrix generation, and visualization for ChIP-seq, ATAC-seq, RNA-seq, and related assays.",
+        "category": "Epigenomics"
+      },
+      {
         "n": "bedtools",
         "p": "/bedtools",
         "d": "对 BED/GFF/GTF/VCF/BAM 等基因组区间做交集、覆盖度、最近邻和格式转换。 / Genome arithmetic toolkit for intersections, coverage, closest features, and format conversion.",
@@ -340,13 +590,42 @@
         "category": "RNA-seq"
       },
       {
+        "n": "StringTie",
+        "p": "/stringtie",
+        "d": "从 RNA-seq 比对结果组装转录本并估计表达量的工具。 / Tool for transcript assembly and expression estimation from RNA-seq alignments.",
+        "category": "RNA-seq"
+      },
+      {
         "n": "STAR",
         "p": "/star",
         "d": "高性能 RNA-seq spliced aligner，常用于 bulk RNA-seq reads 到基因组比对。 / High-performance RNA-seq spliced aligner widely used for mapping reads to a genome.",
         "category": "RNA-seq alignment"
       }
     ],
-    "k": "GTF 常用于 RNA-seq 的基因注释格式，描述 gene、transcript、exon 等 feature。 / Gene annotation format widely used in RNA-seq workflows for genes, transcripts, and exons. Annotation Gene Transfer Format .gtf bedtools featureCounts STAR"
+    "k": "GTF 常用于 RNA-seq 的基因注释格式，描述 gene、transcript、exon 等 feature。 / Gene annotation format widely used in RNA-seq workflows for genes, transcripts, and exons. Annotation Gene Transfer Format .gtf deepTools bedtools featureCounts StringTie STAR"
+  },
+  "GVCF": {
+    "n": "GVCF",
+    "slug": "gvcf",
+    "f": "gvcf.md",
+    "p": "/f/gvcf.html",
+    "d": "VCF 的参考置信度扩展，既记录变异位点，也记录非变异区间，常用于联合分型。 / Reference-confidence VCF extension that records variant sites and non-variant blocks for joint genotyping.",
+    "category": "Variant",
+    "aliases": [
+      "gVCF",
+      "genomic VCF",
+      "reference confidence"
+    ],
+    "official": "https://gatk.broadinstitute.org/hc/en-us/articles/360035531812",
+    "usedBy": [
+      {
+        "n": "GATK",
+        "p": "/gatk",
+        "d": "Broad Institute 的变异分析工具箱，常用于 germline calling、GVCF 联合分型和变异过滤。 / Broad Institute toolkit for variant analysis, commonly used for germline calling, GVCF joint genotyping, and filtering.",
+        "category": "Variant calling"
+      }
+    ],
+    "k": "GVCF VCF 的参考置信度扩展，既记录变异位点，也记录非变异区间，常用于联合分型。 / Reference-confidence VCF extension that records variant sites and non-variant blocks for joint genotyping. Variant gVCF genomic VCF reference confidence GATK"
   },
   "HTML": {
     "n": "HTML",
@@ -362,9 +641,27 @@
     "official": "https://html.spec.whatwg.org/",
     "usedBy": [
       {
+        "n": "QUAST",
+        "p": "/quast",
+        "d": "基因组组装质量评估工具，可输出 N50、总长度、错配、基因覆盖等报告。 / Genome assembly quality assessment tool reporting N50, total length, misassemblies, gene coverage, and related metrics.",
+        "category": "Assembly QC"
+      },
+      {
+        "n": "deepTools",
+        "p": "/deeptools",
+        "d": "面向 ChIP-seq、ATAC-seq、RNA-seq 等数据的覆盖度计算、矩阵生成和可视化工具集。 / Toolkit for coverage calculation, matrix generation, and visualization for ChIP-seq, ATAC-seq, RNA-seq, and related assays.",
+        "category": "Epigenomics"
+      },
+      {
         "n": "fastp",
         "p": "/fastp",
         "d": "一体化 FASTQ 质控、过滤、接头剪切和 HTML/JSON 报告工具。 / All-in-one FASTQ quality control, filtering, adapter trimming, and reporting tool.",
+        "category": "FASTQ preprocessing"
+      },
+      {
+        "n": "Trim Galore",
+        "p": "/trim-galore",
+        "d": "Cutadapt 和 FastQC 的常用封装工具，用于 FASTQ 接头剪切、质量过滤和报告生成。 / Wrapper around Cutadapt and FastQC for adapter trimming, quality filtering, and reporting.",
         "category": "FASTQ preprocessing"
       },
       {
@@ -380,13 +677,25 @@
         "category": "QC summary"
       },
       {
+        "n": "SnpEff",
+        "p": "/snpeff",
+        "d": "快速变异影响注释工具，可为 VCF 添加基因、转录本和预测后果信息。 / Fast variant effect annotation tool that adds gene, transcript, and consequence annotations to VCF files.",
+        "category": "Variant annotation"
+      },
+      {
         "n": "Nextflow",
         "p": "/nextflow",
         "d": "面向可复现生信流程的工作流引擎，常与 nf-core、Conda、Docker/Singularity 配合使用。 / Workflow engine for reproducible bioinformatics pipelines, commonly used with nf-core, Conda, Docker, and Singularity.",
         "category": "Workflow"
+      },
+      {
+        "n": "Snakemake",
+        "p": "/snakemake",
+        "d": "Python 风格的可复现工作流引擎，常用于本地、HPC 和云端生信流程编排。 / Pythonic workflow engine for reproducible bioinformatics pipelines on local machines, HPC, and cloud environments.",
+        "category": "Workflow"
       }
     ],
-    "k": "HTML 常用于可视化 QC 和分析报告的网页格式。 / Web document format commonly used for visual QC and analysis reports. Report .html report fastp FastQC MultiQC Nextflow"
+    "k": "HTML 常用于可视化 QC 和分析报告的网页格式。 / Web document format commonly used for visual QC and analysis reports. Report .html report QUAST deepTools fastp Trim Galore FastQC MultiQC SnpEff Nextflow Snakemake"
   },
   "JSON": {
     "n": "JSON",
@@ -401,6 +710,12 @@
     "official": "https://www.json.org/json-en.html",
     "usedBy": [
       {
+        "n": "BUSCO",
+        "p": "/busco",
+        "d": "基于单拷贝直系同源基因集评估基因组、转录组或蛋白集完整性的工具。 / Tool for assessing genome, transcriptome, or protein-set completeness using single-copy ortholog sets.",
+        "category": "Completeness QC"
+      },
+      {
         "n": "fastp",
         "p": "/fastp",
         "d": "一体化 FASTQ 质控、过滤、接头剪切和 HTML/JSON 报告工具。 / All-in-one FASTQ quality control, filtering, adapter trimming, and reporting tool.",
@@ -413,13 +728,25 @@
         "category": "QC summary"
       },
       {
+        "n": "Ensembl VEP",
+        "p": "/vep",
+        "d": "Ensembl Variant Effect Predictor，用于注释变异对转录本、蛋白和调控区域的潜在影响。 / Ensembl Variant Effect Predictor annotates variant consequences on transcripts, proteins, and regulatory regions.",
+        "category": "Variant annotation"
+      },
+      {
         "n": "Nextflow",
         "p": "/nextflow",
         "d": "面向可复现生信流程的工作流引擎，常与 nf-core、Conda、Docker/Singularity 配合使用。 / Workflow engine for reproducible bioinformatics pipelines, commonly used with nf-core, Conda, Docker, and Singularity.",
         "category": "Workflow"
+      },
+      {
+        "n": "Snakemake",
+        "p": "/snakemake",
+        "d": "Python 风格的可复现工作流引擎，常用于本地、HPC 和云端生信流程编排。 / Pythonic workflow engine for reproducible bioinformatics pipelines on local machines, HPC, and cloud environments.",
+        "category": "Workflow"
       }
     ],
-    "k": "JSON 常用于工具报告、参数和结构化结果交换的轻量数据格式。 / Lightweight structured data format often used for tool reports, parameters, and result exchange. Structured data .json fastp MultiQC Nextflow"
+    "k": "JSON 常用于工具报告、参数和结构化结果交换的轻量数据格式。 / Lightweight structured data format often used for tool reports, parameters, and result exchange. Structured data .json BUSCO fastp MultiQC Ensembl VEP Nextflow Snakemake"
   },
   "narrowPeak": {
     "n": "narrowPeak",
@@ -442,6 +769,29 @@
       }
     ],
     "k": "narrowPeak 基于 BED 的窄峰格式，常用于 TF ChIP-seq 和 ATAC-seq peak 结果。 / BED-derived narrow peak format commonly used for TF ChIP-seq and ATAC-seq peaks. Peak .narrowPeak peak MACS3"
+  },
+  "Newick": {
+    "n": "Newick",
+    "slug": "newick",
+    "f": "newick.md",
+    "p": "/f/newick.html",
+    "d": "用括号嵌套表示系统发育树拓扑和分支长度的轻量文本格式。 / Lightweight text format for phylogenetic tree topology and branch lengths.",
+    "category": "Phylogeny",
+    "aliases": [
+      "tree",
+      "treefile",
+      "nwk"
+    ],
+    "official": "https://evolution.genetics.washington.edu/phylip/newicktree.html",
+    "usedBy": [
+      {
+        "n": "IQ-TREE 2",
+        "p": "/iqtree2",
+        "d": "最大似然系统发育树构建工具，集成模型选择、bootstrap 和多种树评估方法。 / Maximum-likelihood phylogenetic inference tool with model selection, bootstrap, and tree testing methods.",
+        "category": "Phylogeny"
+      }
+    ],
+    "k": "Newick 用括号嵌套表示系统发育树拓扑和分支长度的轻量文本格式。 / Lightweight text format for phylogenetic tree topology and branch lengths. Phylogeny tree treefile nwk IQ-TREE 2"
   },
   "NF": {
     "n": "NF",
@@ -486,6 +836,29 @@
       }
     ],
     "k": "PAF minimap2 默认输出的轻量 pairwise mapping 格式，适合长读长和组装比对摘要。 / Lightweight pairwise mapping format, default output of minimap2 for long-read and assembly alignments. Alignment Pairwise mApping Format .paf minimap2"
+  },
+  "PGEN": {
+    "n": "PGEN",
+    "slug": "pgen",
+    "f": "pgen.md",
+    "p": "/f/pgen.html",
+    "d": "PLINK 2 的二进制基因型格式，通常与 PVAR 和 PSAM 一起使用。 / PLINK 2 binary genotype format, usually paired with PVAR variant metadata and PSAM sample metadata.",
+    "category": "Genotype",
+    "aliases": [
+      "PLINK2",
+      "pvar",
+      "psam"
+    ],
+    "official": "https://www.cog-genomics.org/plink/2.0/formats",
+    "usedBy": [
+      {
+        "n": "PLINK 2",
+        "p": "/plink2",
+        "d": "大规模基因型数据 QC、转换和关联分析的常用命令行工具。 / Common command-line toolkit for large-scale genotype QC, conversion, and association analysis.",
+        "category": "Population genetics"
+      }
+    ],
+    "k": "PGEN PLINK 2 的二进制基因型格式，通常与 PVAR 和 PSAM 一起使用。 / PLINK 2 binary genotype format, usually paired with PVAR variant metadata and PSAM sample metadata. Genotype PLINK2 pvar psam PLINK 2"
   },
   "SAF": {
     "n": "SAF",
@@ -547,13 +920,47 @@
         "category": "Alignment"
       },
       {
+        "n": "HISAT2",
+        "p": "/hisat2",
+        "d": "面向 RNA-seq 的快速剪接感知比对工具，也可用于部分 DNA reads 比对场景。 / Fast splice-aware aligner for RNA-seq reads, also usable for some DNA read alignment scenarios.",
+        "category": "RNA-seq alignment"
+      },
+      {
         "n": "STAR",
         "p": "/star",
         "d": "高性能 RNA-seq spliced aligner，常用于 bulk RNA-seq reads 到基因组比对。 / High-performance RNA-seq spliced aligner widely used for mapping reads to a genome.",
         "category": "RNA-seq alignment"
+      },
+      {
+        "n": "DIAMOND",
+        "p": "/diamond",
+        "d": "高速蛋白序列比对工具，常作为 BLASTP/BLASTX 的快速替代。 / Fast protein aligner commonly used as a high-speed alternative to BLASTP/BLASTX.",
+        "category": "Sequence search"
       }
     ],
-    "k": "SAM 以文本形式保存 reads 比对结果的标准格式，是 BAM/CRAM 的可读源格式。 / Text-based standard format for read alignments; human-readable counterpart of BAM/CRAM. Alignment Sequence Alignment/Map .sam Bowtie2 BWA minimap2 samtools STAR"
+    "k": "SAM 以文本形式保存 reads 比对结果的标准格式，是 BAM/CRAM 的可读源格式。 / Text-based standard format for read alignments; human-readable counterpart of BAM/CRAM. Alignment Sequence Alignment/Map .sam Bowtie2 BWA minimap2 samtools HISAT2 STAR DIAMOND"
+  },
+  "SRA": {
+    "n": "SRA",
+    "slug": "sra",
+    "f": "sra.md",
+    "p": "/f/sra.html",
+    "d": "NCBI Sequence Read Archive 的原始测序数据封装格式，常通过 SRA Toolkit 转换为 FASTQ。 / NCBI Sequence Read Archive container format, commonly converted to FASTQ with SRA Toolkit.",
+    "category": "Sequence archive",
+    "aliases": [
+      "Sequence Read Archive",
+      ".sra"
+    ],
+    "official": "https://github.com/ncbi/sra-tools/wiki",
+    "usedBy": [
+      {
+        "n": "SRA Toolkit",
+        "p": "/sra-tools",
+        "d": "NCBI SRA 数据下载与 FASTQ 转换工具集，常用 `prefetch` 和 `fasterq-dump`。 / Toolkit for downloading NCBI SRA runs and converting them to FASTQ, commonly via `prefetch` and `fasterq-dump`.",
+        "category": "Data download"
+      }
+    ],
+    "k": "SRA NCBI Sequence Read Archive 的原始测序数据封装格式，常通过 SRA Toolkit 转换为 FASTQ。 / NCBI Sequence Read Archive container format, commonly converted to FASTQ with SRA Toolkit. Sequence archive Sequence Read Archive .sra SRA Toolkit"
   },
   "TSV": {
     "n": "TSV",
@@ -569,6 +976,54 @@
     "official": "https://www.iana.org/assignments/media-types/text/tab-separated-values",
     "usedBy": [
       {
+        "n": "QUAST",
+        "p": "/quast",
+        "d": "基因组组装质量评估工具，可输出 N50、总长度、错配、基因覆盖等报告。 / Genome assembly quality assessment tool reporting N50, total length, misassemblies, gene coverage, and related metrics.",
+        "category": "Assembly QC"
+      },
+      {
+        "n": "BUSCO",
+        "p": "/busco",
+        "d": "基于单拷贝直系同源基因集评估基因组、转录组或蛋白集完整性的工具。 / Tool for assessing genome, transcriptome, or protein-set completeness using single-copy ortholog sets.",
+        "category": "Completeness QC"
+      },
+      {
+        "n": "mosdepth",
+        "p": "/mosdepth",
+        "d": "快速计算 BAM/CRAM 覆盖度、深度分布和目标区域覆盖统计的工具。 / Fast tool for BAM/CRAM coverage, depth distribution, and target-region coverage statistics.",
+        "category": "Coverage"
+      },
+      {
+        "n": "deepTools",
+        "p": "/deeptools",
+        "d": "面向 ChIP-seq、ATAC-seq、RNA-seq 等数据的覆盖度计算、矩阵生成和可视化工具集。 / Toolkit for coverage calculation, matrix generation, and visualization for ChIP-seq, ATAC-seq, RNA-seq, and related assays.",
+        "category": "Epigenomics"
+      },
+      {
+        "n": "Prokka",
+        "p": "/prokka",
+        "d": "原核基因组快速注释工具，可从组装 FASTA 生成 GFF、GenBank、蛋白序列和表格结果。 / Rapid prokaryotic genome annotation tool producing GFF, GenBank, protein FASTA, and tabular outputs from assemblies.",
+        "category": "Genome annotation"
+      },
+      {
+        "n": "Kraken2",
+        "p": "/kraken2",
+        "d": "基于 k-mer 的宏基因组 reads 分类工具，常用于微生物群落物种组成分析。 / k-mer based metagenomic read classifier commonly used for microbial taxonomic profiling.",
+        "category": "Metagenomics"
+      },
+      {
+        "n": "IQ-TREE 2",
+        "p": "/iqtree2",
+        "d": "最大似然系统发育树构建工具，集成模型选择、bootstrap 和多种树评估方法。 / Maximum-likelihood phylogenetic inference tool with model selection, bootstrap, and tree testing methods.",
+        "category": "Phylogeny"
+      },
+      {
+        "n": "PLINK 2",
+        "p": "/plink2",
+        "d": "大规模基因型数据 QC、转换和关联分析的常用命令行工具。 / Common command-line toolkit for large-scale genotype QC, conversion, and association analysis.",
+        "category": "Population genetics"
+      },
+      {
         "n": "MultiQC",
         "p": "/multiqc",
         "d": "汇总 FastQC、fastp、STAR、samtools 等工具报告，生成统一 QC 报告。 / Aggregates reports from tools such as FastQC, fastp, STAR, and samtools into one QC report.",
@@ -581,13 +1036,49 @@
         "category": "RNA-seq"
       },
       {
+        "n": "kallisto",
+        "p": "/kallisto",
+        "d": "基于 pseudoalignment 的快速 RNA-seq 转录本定量工具。 / Fast transcript-level RNA-seq quantification tool based on pseudoalignment.",
+        "category": "RNA-seq"
+      },
+      {
         "n": "Salmon",
         "p": "/salmon",
         "d": "快速 RNA-seq transcript-level 定量工具，常用于无比对或准比对定量流程。 / Fast transcript-level RNA-seq quantification tool using lightweight mapping methods.",
         "category": "RNA-seq"
+      },
+      {
+        "n": "StringTie",
+        "p": "/stringtie",
+        "d": "从 RNA-seq 比对结果组装转录本并估计表达量的工具。 / Tool for transcript assembly and expression estimation from RNA-seq alignments.",
+        "category": "RNA-seq"
+      },
+      {
+        "n": "BLAST+",
+        "p": "/blast-plus",
+        "d": "NCBI BLAST+ 命令行工具，用于核酸或蛋白序列相似性搜索。 / NCBI BLAST+ command-line tools for nucleotide and protein sequence similarity search.",
+        "category": "Sequence search"
+      },
+      {
+        "n": "DIAMOND",
+        "p": "/diamond",
+        "d": "高速蛋白序列比对工具，常作为 BLASTP/BLASTX 的快速替代。 / Fast protein aligner commonly used as a high-speed alternative to BLASTP/BLASTX.",
+        "category": "Sequence search"
+      },
+      {
+        "n": "MMseqs2",
+        "p": "/mmseqs2",
+        "d": "高性能序列搜索和聚类工具，适合大规模蛋白或核酸数据集。 / High-performance sequence search and clustering suite for large protein or nucleotide datasets.",
+        "category": "Sequence search"
+      },
+      {
+        "n": "Ensembl VEP",
+        "p": "/vep",
+        "d": "Ensembl Variant Effect Predictor，用于注释变异对转录本、蛋白和调控区域的潜在影响。 / Ensembl Variant Effect Predictor annotates variant consequences on transcripts, proteins, and regulatory regions.",
+        "category": "Variant annotation"
       }
     ],
-    "k": "TSV 以制表符分隔的表格文本格式，常用于统计结果和中间矩阵。 / Tab-separated table format commonly used for statistics, matrices, and intermediate results. Table tab-separated values .tsv MultiQC featureCounts Salmon"
+    "k": "TSV 以制表符分隔的表格文本格式，常用于统计结果和中间矩阵。 / Tab-separated table format commonly used for statistics, matrices, and intermediate results. Table tab-separated values .tsv QUAST BUSCO mosdepth deepTools Prokka Kraken2 IQ-TREE 2 PLINK 2 MultiQC featureCounts kallisto Salmon StringTie BLAST+ DIAMOND MMseqs2 Ensembl VEP"
   },
   "VCF": {
     "n": "VCF",
@@ -610,13 +1101,43 @@
         "category": "Genomic intervals"
       },
       {
+        "n": "PLINK 2",
+        "p": "/plink2",
+        "d": "大规模基因型数据 QC、转换和关联分析的常用命令行工具。 / Common command-line toolkit for large-scale genotype QC, conversion, and association analysis.",
+        "category": "Population genetics"
+      },
+      {
+        "n": "Ensembl VEP",
+        "p": "/vep",
+        "d": "Ensembl Variant Effect Predictor，用于注释变异对转录本、蛋白和调控区域的潜在影响。 / Ensembl Variant Effect Predictor annotates variant consequences on transcripts, proteins, and regulatory regions.",
+        "category": "Variant annotation"
+      },
+      {
+        "n": "SnpEff",
+        "p": "/snpeff",
+        "d": "快速变异影响注释工具，可为 VCF 添加基因、转录本和预测后果信息。 / Fast variant effect annotation tool that adds gene, transcript, and consequence annotations to VCF files.",
+        "category": "Variant annotation"
+      },
+      {
+        "n": "FreeBayes",
+        "p": "/freebayes",
+        "d": "基于 haplotype 的变异检测工具，可从 BAM/CRAM 中调用 SNP、indel 和复杂变异。 / Haplotype-based variant caller for SNPs, indels, and complex variants from BAM/CRAM alignments.",
+        "category": "Variant calling"
+      },
+      {
+        "n": "GATK",
+        "p": "/gatk",
+        "d": "Broad Institute 的变异分析工具箱，常用于 germline calling、GVCF 联合分型和变异过滤。 / Broad Institute toolkit for variant analysis, commonly used for germline calling, GVCF joint genotyping, and filtering.",
+        "category": "Variant calling"
+      },
+      {
         "n": "bcftools",
         "p": "/bcftools",
         "d": "读取、过滤、规范化、合并、查询和注释 VCF/BCF 变异文件。 / Toolkit for viewing, filtering, normalizing, merging, querying, and annotating VCF/BCF variant files.",
         "category": "VCF/BCF"
       }
     ],
-    "k": "VCF 保存遗传变异、样本基因型和注释信息的标准文本格式。 / Standard text format for genetic variants, sample genotypes, and annotations. Variant Variant Call Format .vcf vcf.gz bedtools bcftools"
+    "k": "VCF 保存遗传变异、样本基因型和注释信息的标准文本格式。 / Standard text format for genetic variants, sample genotypes, and annotations. Variant Variant Call Format .vcf vcf.gz bedtools PLINK 2 Ensembl VEP SnpEff FreeBayes GATK bcftools"
   },
   "YAML": {
     "n": "YAML",
@@ -636,9 +1157,15 @@
         "p": "/nextflow",
         "d": "面向可复现生信流程的工作流引擎，常与 nf-core、Conda、Docker/Singularity 配合使用。 / Workflow engine for reproducible bioinformatics pipelines, commonly used with nf-core, Conda, Docker, and Singularity.",
         "category": "Workflow"
+      },
+      {
+        "n": "Snakemake",
+        "p": "/snakemake",
+        "d": "Python 风格的可复现工作流引擎，常用于本地、HPC 和云端生信流程编排。 / Pythonic workflow engine for reproducible bioinformatics pipelines on local machines, HPC, and cloud environments.",
+        "category": "Workflow"
       }
     ],
-    "k": "YAML 常用于流程配置、环境定义和参数文件的人类可读结构化格式。 / Human-readable structured format commonly used for workflow configs, environments, and parameter files. Configuration .yaml .yml Nextflow"
+    "k": "YAML 常用于流程配置、环境定义和参数文件的人类可读结构化格式。 / Human-readable structured format commonly used for workflow configs, environments, and parameter files. Configuration .yaml .yml Nextflow Snakemake"
   },
   "ZIP": {
     "n": "ZIP",

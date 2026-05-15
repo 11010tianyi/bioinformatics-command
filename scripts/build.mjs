@@ -39,9 +39,10 @@ const site = {
 
     const jsData = await FS.readFileSync(rootIndexJSPath);
     await FS.outputFile(path.resolve(deployDir, 'js', 'index.js'), UglifyJS.minify(jsData.toString()).code)
-    const files = await readMarkdownPaths(commandDir);
-    const jsonData = await createCommandData(files);
     const formatFiles = await readMarkdownPaths(formatDir);
+    const availableFormatSlugs = new Set(formatFiles.map((file) => path.basename(file, '.md')));
+    const files = await readMarkdownPaths(commandDir);
+    const jsonData = await createCommandData(files, availableFormatSlugs);
     const formatData = await createFormatData(formatFiles, jsonData.data);
     await FS.outputFile(dataJsonPath, JSON.stringify(jsonData.json, null, 2));
     await FS.outputFile(dataJsonMinPath, JSON.stringify(jsonData.json));
@@ -188,7 +189,7 @@ const site = {
  * Ensures that the directory exists.
  * @param {String} pathArr
  */
- function createCommandData(pathArr) {
+ function createCommandData(pathArr, availableFormatSlugs = new Set()) {
   return new Promise((resolve, reject) => {
     try {
       const commandData = {};
@@ -233,11 +234,14 @@ const site = {
         json["category"] = meta.category || '';
         json["aliases"] = normalizeList(meta.aliases);
         json["formats"] = normalizeList(meta.formats);
-        json["formatLinks"] = json.formats.map((name) => ({
-          name,
-          slug: slugify(name),
-          path: `/f/${slugify(name)}.html`,
-        }));
+        json["formatLinks"] = json.formats.map((name) => {
+          const slug = slugify(name);
+          return {
+            name,
+            slug,
+            path: availableFormatSlugs.has(slug) ? `/f/${slug}.html` : '',
+          };
+        });
         json["tags"] = normalizeList(meta.tags);
         json["install"] = meta.install || '';
         json["official"] = meta.official || '';

@@ -40,13 +40,15 @@ official: https://www.htslib.org/doc/samtools.html
 ---
 ```
 
-## 首批条目
+## 当前条目
 
-已收录 `fastp`、`FastQC`、`MultiQC`、`Cutadapt`、`SeqKit`、`BWA`、`Bowtie2`、`minimap2`、`STAR`、`samtools`、`bcftools`、`bedtools`、`featureCounts`、`MACS3`、`Salmon`、`Nextflow`。
+已收录 40 个高频命令，覆盖 FASTQ 质控与预处理、比对、BAM/VCF/BED 处理、RNA-seq、ChIP-seq/ATAC-seq、变异检测与注释、组装与注释、宏基因组、系统发育、同源搜索、群体遗传和工作流。
+
+代表条目包括 `fastp`、`FastQC`、`MultiQC`、`Cutadapt`、`Trim Galore`、`SeqKit`、`seqtk`、`SRA Toolkit`、`BWA`、`Bowtie2`、`HISAT2`、`minimap2`、`STAR`、`samtools`、`bcftools`、`bedtools`、`GATK`、`FreeBayes`、`SnpEff`、`Ensembl VEP`、`PLINK 2`、`featureCounts`、`StringTie`、`Salmon`、`kallisto`、`MACS3`、`deepTools`、`mosdepth`、`Kraken2`、`SPAdes`、`QUAST`、`Prokka`、`BUSCO`、`BLAST+`、`DIAMOND`、`MMseqs2`、`MAFFT`、`IQ-TREE 2`、`Nextflow`、`Snakemake`。
 
 ## 格式索引
 
-`formats` frontmatter 会自动生成可点击标签，指向 `bio-format/` 下的格式详情页，例如 `FASTQ`、`BAM`、`VCF`、`BED` 等。格式页会反向列出使用该格式的命令。
+`formats` frontmatter 会自动生成可点击标签，指向 `bio-format/` 下的格式详情页，例如 `FASTQ`、`BAM`、`VCF`、`BED`、`GVCF`、`SRA`、`bigWig` 等。格式页会反向列出使用该格式的命令；如果某个格式暂时还没有详情页，构建脚本会显示为普通标签，避免生成坏链接。
 
 ## License
 

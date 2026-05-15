@@ -16,7 +16,11 @@
   <strong>文件格式 / Formats</strong>
   <div class="format-chip-list">
     <% describe.formatLinks.forEach(function(format){ %>
+      <% if(format.path){ %>
       <a class="format-chip" href="../<%=format.path.replace(/^\//,'')%>"><%=format.name%></a>
+      <% } else { %>
+      <span class="format-chip"><%=format.name%></span>
+      <% } %>
     <% }); %>
   </div>
 </div>
