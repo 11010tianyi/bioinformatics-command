@@ -11,16 +11,14 @@
 </span>
 <% } %>
 
-<% if(describe.formatLinks && describe.formatLinks.length){ %>
 <div class="format-usedby">
-  <strong>文件格式 / Formats</strong>
+  <strong>使用该格式的命令 / Commands using this format</strong>
   <div class="format-chip-list">
-    <% describe.formatLinks.forEach(function(format){ %>
-      <a class="format-chip" href="../<%=format.path.replace(/^\//,'')%>"><%=format.name%></a>
+    <% (describe.usedBy || []).forEach(function(command){ %>
+      <a class="format-chip" href="../c<%=command.p%>.html"><%=command.n%></a>
     <% }); %>
   </div>
 </div>
-<% } %>
 
 <%-mdhtml%>
 

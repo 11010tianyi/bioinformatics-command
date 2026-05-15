@@ -1,6 +1,7 @@
 <div class="footer <%if(type=='home'){%> home <%}%>">
   <a target="_blank" href="https://github.com/11010tianyi/bioinformatics-command/new/master/bio-command">添加命令 / Add command</a> |
   <a href="<%=relative_path%>hot.html">命令列表 / Command list</a> |
+  <a href="<%=relative_path%>formats.html">格式索引 / Formats</a> |
   <a href="<%=relative_path%>contributors.html">资料来源 / Sources</a> |
   <a target="_blank" href="https://github.com/JoshuaChou2018/AutoBA">AutoBA</a> |
   <a target="_blank" href="https://github.com/tldr-pages/tldr">tldr-pages</a> |
@@ -14,6 +15,8 @@
     <span id="commands_info">
       <%=describe.command_length?describe.command_length:''%>
     </span>
-    个生信高频命令 / curated bioinformatics commands.
+    个生信高频命令，
+    <%=describe.format_length?describe.format_length:''%>
+    个文件格式 / curated commands and formats.
   </div>
 </div>

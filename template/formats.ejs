@@ -1,0 +1,17 @@
+<%- include('partial/header'); %>
+<%- include('widget/search',{type: "list"}); %>
+<div class="hotlist">
+  <ul>
+  <%describe.arr.forEach(function(format){%>
+    <li>
+      <a href="f/<%=format.slug%>.html"><strong><%=format.n%></strong><% if(format.category){ %> <span class="result-chip"><%=format.category%></span><% } %> - <%=format.d%></a>
+      <% if(format.usedBy && format.usedBy.length){ %>
+      <p>Commands: <%=format.usedBy.map(function(item){ return item.n }).join(', ')%></p>
+      <% } %>
+    </li>
+  <%});%>
+  </ul>
+</div>
+
+<%- include('widget/footer',{type: "list"}); %>
+<%- include('partial/footer'); %>

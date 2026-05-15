@@ -23,7 +23,7 @@ npx http-server .deploy -p 9665
 
 ## 内容结构
 
-新内容放在 `bio-command/`，旧的 `command/` 目录保留为上游资料，不参与当前站点索引。
+新命令内容放在 `bio-command/`，文件格式说明放在 `bio-format/`。旧的 `command/` 目录保留为上游资料，不参与当前站点索引。
 
 每个条目建议使用 frontmatter：
 
@@ -43,6 +43,10 @@ official: https://www.htslib.org/doc/samtools.html
 ## 首批条目
 
 已收录 `fastp`、`FastQC`、`MultiQC`、`Cutadapt`、`SeqKit`、`BWA`、`Bowtie2`、`minimap2`、`STAR`、`samtools`、`bcftools`、`bedtools`、`featureCounts`、`MACS3`、`Salmon`、`Nextflow`。
+
+## 格式索引
+
+`formats` frontmatter 会自动生成可点击标签，指向 `bio-format/` 下的格式详情页，例如 `FASTQ`、`BAM`、`VCF`、`BED` 等。格式页会反向列出使用该格式的命令。
 
 ## License
 

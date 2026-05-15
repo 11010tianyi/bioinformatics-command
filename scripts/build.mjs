@@ -8,10 +8,12 @@ import _ from 'colors-cli/toxic';
 
 const deployDir = path.resolve(process.cwd(), '.deploy');
 const commandDir = path.resolve(process.cwd(), 'bio-command');
+const formatDir = path.resolve(process.cwd(), 'bio-format');
 const templateImgDir = path.resolve(process.cwd(), 'template', 'img');
 const rootIndexJSPath = path.resolve(process.cwd(), 'template', 'js', 'index.js');
 const dataJsonPath = path.resolve(process.cwd(), 'dist', 'data.json');
 const dataJsonMinPath = path.resolve(process.cwd(), 'dist', 'data.min.json');
+const formatsJsonPath = path.resolve(process.cwd(), 'dist', 'formats.json');
 const cssPath = path.resolve(deployDir, 'css', 'index.css');
 const contributorsPath = path.resolve(process.cwd(), 'CONTRIBUTORS.svg');
 const site = {
@@ -28,6 +30,7 @@ const site = {
     await FS.ensureDir(path.resolve(deployDir, 'js'));
     await FS.ensureDir(path.resolve(deployDir, 'css'));
     await FS.ensureDir(path.resolve(deployDir, 'c'));
+    await FS.ensureDir(path.resolve(deployDir, 'f'));
     await FS.copySync(templateImgDir, path.resolve(deployDir, 'img'));
     
     await FS.copyFile(path.resolve(process.cwd(), 'template', 'js', 'copy-to-clipboard.js'), path.resolve(deployDir, 'js', 'copy-to-clipboard.js'));
@@ -37,10 +40,13 @@ const site = {
     const jsData = await FS.readFileSync(rootIndexJSPath);
     await FS.outputFile(path.resolve(deployDir, 'js', 'index.js'), UglifyJS.minify(jsData.toString()).code)
     const files = await readMarkdownPaths(commandDir);
-    const jsonData = await createDataJSON(files);
+    const jsonData = await createCommandData(files);
+    const formatFiles = await readMarkdownPaths(formatDir);
+    const formatData = await createFormatData(formatFiles, jsonData.data);
     await FS.outputFile(dataJsonPath, JSON.stringify(jsonData.json, null, 2));
     await FS.outputFile(dataJsonMinPath, JSON.stringify(jsonData.json));
-    await FS.outputFile(path.resolve(deployDir, 'js', 'dt.js'), `var bio_commands=${JSON.stringify(jsonData.data)}`);
+    await FS.outputFile(formatsJsonPath, JSON.stringify(formatData.json, null, 2));
+    await FS.outputFile(path.resolve(deployDir, 'js', 'dt.js'), `var bio_commands=${JSON.stringify(jsonData.data)};var bio_formats=${JSON.stringify(formatData.data)}`);
 
     const cssStr = await createStylToCss(
       path.resolve(process.cwd(), 'template', 'styl', 'index.styl'),
@@ -58,6 +64,7 @@ const site = {
         n: site.titleZh,
         d: site.description,
         command_length: jsonData.data.length,
+        format_length: formatData.data.length,
         site,
       }
     );
@@ -70,6 +77,7 @@ const site = {
         n: '搜索',
         d: site.description,
         command_length: jsonData.data.length,
+        format_length: formatData.data.length,
         site,
       }
     );
@@ -83,6 +91,21 @@ const site = {
         d: site.description,
         arr: jsonData.data,
         command_length: jsonData.data.length,
+        format_length: formatData.data.length,
+        site,
+      }
+    );
+
+    await createTmpToHTML(
+      path.resolve(process.cwd(), 'template', 'formats.ejs'),
+      path.resolve(deployDir, 'formats.html'),
+      {
+        p: '/formats.html',
+        n: '格式索引',
+        d: '生信文件格式索引。',
+        arr: formatData.data,
+        command_length: jsonData.data.length,
+        format_length: formatData.data.length,
         site,
       }
     );
@@ -101,6 +124,7 @@ const site = {
         d: site.description,
         arr: jsonData.data,
         command_length: jsonData.data.length,
+        format_length: formatData.data.length,
         contributors: svgStr,
         site,
       }
@@ -108,12 +132,25 @@ const site = {
     
     await Promise.all(jsonData.data.map(async (item, idx) => {
       item.command_length = jsonData.data.length;
+      item.format_length = formatData.data.length;
       item.site = site;
       await createTmpToHTML(
         path.resolve(process.cwd(), 'template', 'details.ejs'),
         path.resolve(deployDir, 'c', `${item.slug}.html`),
         item,
         commandDir,
+      );
+    }));
+
+    await Promise.all(formatData.data.map(async (item) => {
+      item.command_length = jsonData.data.length;
+      item.format_length = formatData.data.length;
+      item.site = site;
+      await createTmpToHTML(
+        path.resolve(process.cwd(), 'template', 'format.ejs'),
+        path.resolve(deployDir, 'f', `${item.slug}.html`),
+        item,
+        formatDir,
       );
     }));
 
@@ -151,7 +188,7 @@ const site = {
  * Ensures that the directory exists.
  * @param {String} pathArr
  */
- function createDataJSON(pathArr) {
+ function createCommandData(pathArr) {
   return new Promise((resolve, reject) => {
     try {
       const commandData = {};
@@ -196,6 +233,11 @@ const site = {
         json["category"] = meta.category || '';
         json["aliases"] = normalizeList(meta.aliases);
         json["formats"] = normalizeList(meta.formats);
+        json["formatLinks"] = json.formats.map((name) => ({
+          name,
+          slug: slugify(name),
+          path: `/f/${slugify(name)}.html`,
+        }));
         json["tags"] = normalizeList(meta.tags);
         json["install"] = meta.install || '';
         json["official"] = meta.official || '';
@@ -224,6 +266,66 @@ const site = {
   });
 }
 
+function createFormatData(pathArr, commands) {
+  return new Promise((resolve, reject) => {
+    try {
+      const formatData = {};
+      const indexes = [];
+      pathArr.forEach((mdPath) => {
+        const con = FS.readFileSync(mdPath);
+        const raw = con.toString();
+        const { meta, body } = parseFrontmatter(raw);
+        let title = meta.name || '';
+        if (!title) {
+          const setextTitle = body.match(/^(.+?)\r?\n={3,}\r?\n/);
+          const atxTitle = body.match(/^#\s+(.+)$/m);
+          title = setextTitle ? setextTitle[1] : (atxTitle ? atxTitle[1] : '');
+        }
+        title = title.replace(/\r/g, '').trim();
+        if (!title) {
+          throw `格式错误: ${mdPath}`;
+        }
+        const slug = path.basename(mdPath, '.md').replace(/\\/g, '/');
+        const usedBy = commands
+          .filter((command) => command.formats.some((format) => slugify(format) === slug))
+          .map((command) => ({
+            n: command.n,
+            p: command.p,
+            d: command.d,
+            category: command.category,
+          }));
+        const json = {
+          n: title,
+          slug,
+          f: path.basename(mdPath),
+          p: `/f/${slug}.html`,
+          d: joinSummary(meta),
+          category: meta.category || '',
+          aliases: normalizeList(meta.aliases),
+          official: meta.official || '',
+          usedBy,
+          k: [
+            title,
+            joinSummary(meta),
+            meta.category || '',
+            ...normalizeList(meta.aliases),
+            ...usedBy.map((item) => item.n),
+          ].filter(Boolean).join(' '),
+        };
+        indexes.push(json);
+        formatData[title] = json;
+      });
+      indexes.sort((a, b) => a.n.localeCompare(b.n));
+      resolve({
+        json: formatData,
+        data: indexes,
+      });
+    } catch (err) {
+      reject(err);
+    }
+  });
+}
+
 /**
  * @param {String} fromPath ejs path
  * @param {String} toPath html path
@@ -239,7 +341,7 @@ const site = {
       if (mdPath) {
         // CSS/JS 引用相对地址
         relative_path = '../';
-        mdPathName = `/bio-command/${desJson.f}`;
+        mdPathName = `/${mdPath === commandDir ? 'bio-command' : 'bio-format'}/${desJson.f}`;
         const READMESTR = await FS.readFile(path.resolve(mdPath, desJson.f));
         mdhtml = await markdownToHTML(stripFrontmatter(READMESTR.toString()));
       }
@@ -304,6 +406,24 @@ function normalizeList(value) {
     .split(',')
     .map((item) => item.trim())
     .filter(Boolean);
+}
+
+function joinSummary(meta) {
+  let des = meta.summary_zh || meta.summary || '';
+  if (meta.summary_en) {
+    des = des ? `${des} / ${meta.summary_en}` : meta.summary_en;
+  }
+  return des.replace(/\r/g, '');
+}
+
+function slugify(value) {
+  return String(value || '')
+    .trim()
+    .toLowerCase()
+    .replace(/\+/g, 'plus')
+    .replace(/#/g, 'sharp')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }
 
 function markdownToHTML(str) {

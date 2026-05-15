@@ -16,6 +16,18 @@
       "VCF",
       "BCF"
     ],
+    "formatLinks": [
+      {
+        "name": "VCF",
+        "slug": "vcf",
+        "path": "/f/vcf.html"
+      },
+      {
+        "name": "BCF",
+        "slug": "bcf",
+        "path": "/f/bcf.html"
+      }
+    ],
     "tags": [
       "variant calling",
       "filtering",
@@ -46,6 +58,33 @@
       "VCF",
       "BAM"
     ],
+    "formatLinks": [
+      {
+        "name": "BED",
+        "slug": "bed",
+        "path": "/f/bed.html"
+      },
+      {
+        "name": "GFF",
+        "slug": "gff",
+        "path": "/f/gff.html"
+      },
+      {
+        "name": "GTF",
+        "slug": "gtf",
+        "path": "/f/gtf.html"
+      },
+      {
+        "name": "VCF",
+        "slug": "vcf",
+        "path": "/f/vcf.html"
+      },
+      {
+        "name": "BAM",
+        "slug": "bam",
+        "path": "/f/bam.html"
+      }
+    ],
     "tags": [
       "genome arithmetic",
       "annotation",
@@ -71,6 +110,23 @@
       "FASTQ",
       "FASTA",
       "SAM"
+    ],
+    "formatLinks": [
+      {
+        "name": "FASTQ",
+        "slug": "fastq",
+        "path": "/f/fastq.html"
+      },
+      {
+        "name": "FASTA",
+        "slug": "fasta",
+        "path": "/f/fasta.html"
+      },
+      {
+        "name": "SAM",
+        "slug": "sam",
+        "path": "/f/sam.html"
+      }
     ],
     "tags": [
       "DNA-seq",
@@ -100,6 +156,28 @@
       "SAM",
       "BAM"
     ],
+    "formatLinks": [
+      {
+        "name": "FASTQ",
+        "slug": "fastq",
+        "path": "/f/fastq.html"
+      },
+      {
+        "name": "FASTA",
+        "slug": "fasta",
+        "path": "/f/fasta.html"
+      },
+      {
+        "name": "SAM",
+        "slug": "sam",
+        "path": "/f/sam.html"
+      },
+      {
+        "name": "BAM",
+        "slug": "bam",
+        "path": "/f/bam.html"
+      }
+    ],
     "tags": [
       "DNA-seq",
       "WGS",
@@ -123,6 +201,13 @@
     ],
     "formats": [
       "FASTQ"
+    ],
+    "formatLinks": [
+      {
+        "name": "FASTQ",
+        "slug": "fastq",
+        "path": "/f/fastq.html"
+      }
     ],
     "tags": [
       "QC",
@@ -150,6 +235,23 @@
       "JSON",
       "HTML"
     ],
+    "formatLinks": [
+      {
+        "name": "FASTQ",
+        "slug": "fastq",
+        "path": "/f/fastq.html"
+      },
+      {
+        "name": "JSON",
+        "slug": "json",
+        "path": "/f/json.html"
+      },
+      {
+        "name": "HTML",
+        "slug": "html",
+        "path": "/f/html.html"
+      }
+    ],
     "tags": [
       "QC",
       "preprocessing",
@@ -174,6 +276,23 @@
       "FASTQ",
       "HTML",
       "ZIP"
+    ],
+    "formatLinks": [
+      {
+        "name": "FASTQ",
+        "slug": "fastq",
+        "path": "/f/fastq.html"
+      },
+      {
+        "name": "HTML",
+        "slug": "html",
+        "path": "/f/html.html"
+      },
+      {
+        "name": "ZIP",
+        "slug": "zip",
+        "path": "/f/zip.html"
+      }
     ],
     "tags": [
       "QC",
@@ -201,6 +320,28 @@
       "GTF",
       "SAF",
       "TSV"
+    ],
+    "formatLinks": [
+      {
+        "name": "BAM",
+        "slug": "bam",
+        "path": "/f/bam.html"
+      },
+      {
+        "name": "GTF",
+        "slug": "gtf",
+        "path": "/f/gtf.html"
+      },
+      {
+        "name": "SAF",
+        "slug": "saf",
+        "path": "/f/saf.html"
+      },
+      {
+        "name": "TSV",
+        "slug": "tsv",
+        "path": "/f/tsv.html"
+      }
     ],
     "tags": [
       "RNA-seq",
@@ -230,6 +371,33 @@
       "narrowPeak",
       "broadPeak"
     ],
+    "formatLinks": [
+      {
+        "name": "BAM",
+        "slug": "bam",
+        "path": "/f/bam.html"
+      },
+      {
+        "name": "BED",
+        "slug": "bed",
+        "path": "/f/bed.html"
+      },
+      {
+        "name": "BEDPE",
+        "slug": "bedpe",
+        "path": "/f/bedpe.html"
+      },
+      {
+        "name": "narrowPeak",
+        "slug": "narrowpeak",
+        "path": "/f/narrowpeak.html"
+      },
+      {
+        "name": "broadPeak",
+        "slug": "broadpeak",
+        "path": "/f/broadpeak.html"
+      }
+    ],
     "tags": [
       "ChIP-seq",
       "ATAC-seq",
@@ -258,6 +426,28 @@
       "PAF",
       "SAM"
     ],
+    "formatLinks": [
+      {
+        "name": "FASTA",
+        "slug": "fasta",
+        "path": "/f/fasta.html"
+      },
+      {
+        "name": "FASTQ",
+        "slug": "fastq",
+        "path": "/f/fastq.html"
+      },
+      {
+        "name": "PAF",
+        "slug": "paf",
+        "path": "/f/paf.html"
+      },
+      {
+        "name": "SAM",
+        "slug": "sam",
+        "path": "/f/sam.html"
+      }
+    ],
     "tags": [
       "long-read",
       "assembly",
@@ -283,6 +473,23 @@
       "HTML",
       "TSV",
       "JSON"
+    ],
+    "formatLinks": [
+      {
+        "name": "HTML",
+        "slug": "html",
+        "path": "/f/html.html"
+      },
+      {
+        "name": "TSV",
+        "slug": "tsv",
+        "path": "/f/tsv.html"
+      },
+      {
+        "name": "JSON",
+        "slug": "json",
+        "path": "/f/json.html"
+      }
     ],
     "tags": [
       "QC",
@@ -311,6 +518,28 @@
       "JSON",
       "HTML"
     ],
+    "formatLinks": [
+      {
+        "name": "NF",
+        "slug": "nf",
+        "path": "/f/nf.html"
+      },
+      {
+        "name": "YAML",
+        "slug": "yaml",
+        "path": "/f/yaml.html"
+      },
+      {
+        "name": "JSON",
+        "slug": "json",
+        "path": "/f/json.html"
+      },
+      {
+        "name": "HTML",
+        "slug": "html",
+        "path": "/f/html.html"
+      }
+    ],
     "tags": [
       "workflow",
       "reproducibility",
@@ -336,6 +565,23 @@
       "FASTQ",
       "FASTA",
       "TSV"
+    ],
+    "formatLinks": [
+      {
+        "name": "FASTQ",
+        "slug": "fastq",
+        "path": "/f/fastq.html"
+      },
+      {
+        "name": "FASTA",
+        "slug": "fasta",
+        "path": "/f/fasta.html"
+      },
+      {
+        "name": "TSV",
+        "slug": "tsv",
+        "path": "/f/tsv.html"
+      }
     ],
     "tags": [
       "RNA-seq",
@@ -364,6 +610,23 @@
       "BAM",
       "CRAM"
     ],
+    "formatLinks": [
+      {
+        "name": "SAM",
+        "slug": "sam",
+        "path": "/f/sam.html"
+      },
+      {
+        "name": "BAM",
+        "slug": "bam",
+        "path": "/f/bam.html"
+      },
+      {
+        "name": "CRAM",
+        "slug": "cram",
+        "path": "/f/cram.html"
+      }
+    ],
     "tags": [
       "alignment",
       "indexing",
@@ -389,6 +652,18 @@
     "formats": [
       "FASTA",
       "FASTQ"
+    ],
+    "formatLinks": [
+      {
+        "name": "FASTA",
+        "slug": "fasta",
+        "path": "/f/fasta.html"
+      },
+      {
+        "name": "FASTQ",
+        "slug": "fastq",
+        "path": "/f/fastq.html"
+      }
     ],
     "tags": [
       "FASTA",
@@ -417,6 +692,33 @@
       "GTF",
       "SAM",
       "BAM"
+    ],
+    "formatLinks": [
+      {
+        "name": "FASTQ",
+        "slug": "fastq",
+        "path": "/f/fastq.html"
+      },
+      {
+        "name": "FASTA",
+        "slug": "fasta",
+        "path": "/f/fasta.html"
+      },
+      {
+        "name": "GTF",
+        "slug": "gtf",
+        "path": "/f/gtf.html"
+      },
+      {
+        "name": "SAM",
+        "slug": "sam",
+        "path": "/f/sam.html"
+      },
+      {
+        "name": "BAM",
+        "slug": "bam",
+        "path": "/f/bam.html"
+      }
     ],
     "tags": [
       "RNA-seq",
